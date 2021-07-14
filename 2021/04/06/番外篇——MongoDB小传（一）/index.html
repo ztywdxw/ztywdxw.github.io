@@ -273,31 +273,31 @@
 
   
   <div class="content">
-        <div><p> <img src="https://www.hualigs.cn/image/606c734e4cb8e.jpg" alt="1"></p>
+        <div><p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/606c734e4cb8e.jpg" alt="1"></p>
 <h3 id="一、基本概念介绍-amp-MongoDB特性"><a href="#一、基本概念介绍-amp-MongoDB特性" class="headerlink" title="一、基本概念介绍&amp;MongoDB特性"></a>一、基本概念介绍&amp;MongoDB特性</h3><p>  本篇为番外系列第一篇，我们来领略一下NoSQL数据库的代表之作——MongoDB的各种特性。<br>  作为NoSQL数据库家族中采用分布式文件存储的数据库。MongoDB由 C++ 语言编写。旨在为 WEB 应用提供可扩展的高性能数据存储解决方案。并且，MongoDB 是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。</p>
-<h3 id="二、什么是NoSQL"><a href="#二、什么是NoSQL" class="headerlink" title="二、什么是NoSQL"></a>二、什么是NoSQL</h3><p> <img src="https://www.hualigs.cn/image/606c734bc2456.jpg" alt="a"></p>
+<h3 id="二、什么是NoSQL"><a href="#二、什么是NoSQL" class="headerlink" title="二、什么是NoSQL"></a>二、什么是NoSQL</h3><p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/606c734bc2456.jpg" alt="a"></p>
 <p>  NoSQL(NoSQL = Not Only SQL )，意即”不仅仅是SQL”。</p>
 <p>在现代的计算系统上每天网络上都会产生庞大的数据量。</p>
 <p>  这些数据有很大一部分是由关系数据库管理系统（RDBMS）来处理。 1970年 E.F.Codd’s提出的关系模型的论文 “A relational model of data for large shared data banks”，这使得数据建模和应用程序编程更加简单。</p>
 <p>  通过应用实践证明，关系模型是非常适合于客户服务器编程，远远超出预期的利益，今天它是结构化数据存储在网络和商务应用的主导技术。</p>
 <p>  NoSQL 是一项全新的数据库革命性运动，早期就有人提出，发展至2009年趋势越发高涨。NoSQL的拥护者们提倡运用非关系型的数据存储，相对于铺天盖地的关系型数据库运用，这一概念无疑是一种全新的思维的注入。</p>
 <p> 下面是NoSQL的类型及其分布</p>
-<p> <img src="https://www.hualigs.cn/image/606c736b4bf6d.jpg" alt="2"></p>
-<p> <img src="https://www.hualigs.cn/image/606c7369d214e.jpg" alt="3"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/606c736b4bf6d.jpg" alt="2"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/606c7369d214e.jpg" alt="3"></p>
 <p>  由此可见，NoSQL家族中的文档型数据库属于大多数，而且MongoDB正是这其中的佼佼者！</p>
 <h3 id="三、NoSQL的特点"><a href="#三、NoSQL的特点" class="headerlink" title="三、NoSQL的特点"></a>三、NoSQL的特点</h3><p>  当代典型的关系数据库在一些数据敏感的应用中表现了糟糕的性能，例如为巨量文档创建索引、高流量网站的网页服务，以及发送流式媒体。关系型数据库的典型实现主要被调整用于执行规模小而读写频繁，或者大批量读而极少写访问的事务。</p>
 <p>  NoSQL的结构通常提供弱一致性的保证，如最终一致性，或交易仅限于单个的数据项。不过，有些系统，提供完整的ACID保证在某些情况下，增加了补充中间件层（例如：CloudTPS）。有两个成熟的系统有提供快照隔离的列存储：像是Google基于过滤器系统的BigTable，和滑铁卢大学开发的HBase。这些系统，自主开发，使用类似的概念来实现多行（multi-row）分布式ACID交易的快照隔离（snapshot isolation）保证为基础列存储，无需额外的资料管理开销，中间件系统部署或维护，减少了中间件层。</p>
 <p>  少数NoSQL系统部署了分布式结构，通常使用分布式散列表（DHT）将数据以冗余方式保存在多台服务器上。依此，扩充系统时候添加服务器更容易，并且扩大了对服务器失效的承受能程度。</p>
 <h3 id="四、简单入门"><a href="#四、简单入门" class="headerlink" title="四、简单入门"></a>四、简单入门</h3><p>  下载安装什么的基本上与之前介绍的大同小异，传送门（<a target="_blank" rel="noopener" href="https://www.mongodb.com/try/download/community%EF%BC%89">https://www.mongodb.com/try/download/community）</a> 。实在不明白菜鸟教程传送门（<a target="_blank" rel="noopener" href="https://www.runoob.com/mongodb/mongodb-window-install.html%EF%BC%89">https://www.runoob.com/mongodb/mongodb-window-install.html）</a> 。</p>
-<p> <img src="https://www.hualigs.cn/image/606c736f6cd9a.jpg" alt="i"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/606c736f6cd9a.jpg" alt="i"></p>
 <p>  PS:最好选上安装COMPASS，这样就不用命令调试了，可以一键进入你的数据库，MongoDB还是挺开箱即用的，不像那些SQL需要配置。</p>
-<p> <img src="https://www.hualigs.cn/image/606c736638396.jpg" alt="c"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/606c736638396.jpg" alt="c"></p>
 <p>  COMPASS装好以后进行connect</p>
-<p> <img src="https://www.hualigs.cn/image/606c736d0c3ef.jpg" alt="4"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/606c736d0c3ef.jpg" alt="4"></p>
 <p>  connect完以后正常情况下这样</p>
-<p> <img src="https://www.hualigs.cn/image/606c736c723d4.jpg" alt="5"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/606c736c723d4.jpg" alt="5"></p>
 <p>  操作神马的用DataGrip就行，参见远征第一篇和菜鸟教程（<a target="_blank" rel="noopener" href="https://www.runoob.com/mongodb/mongodb-tutorial.html%EF%BC%89">https://www.runoob.com/mongodb/mongodb-tutorial.html）</a> ，下期会仔细讲的。</p>
-<p> <img src="https://www.hualigs.cn/image/606c7372ecf6c.jpg" alt="6"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/606c7372ecf6c.jpg" alt="6"></p>
 <h3 id="五、后记-amp-下期预告"><a href="#五、后记-amp-下期预告" class="headerlink" title="五、后记&amp;下期预告"></a>五、后记&amp;下期预告</h3><p>  最近着实事务繁多，刚刚从教资的大坑里边爬出来，紧接着又投入了二级的战场。考完这俩证三月就过去了，过完一个闹心的清明以后就着手下期，赶在熄灯断电前写完了算是。这期着实匆忙，下期肯定认真，希望大家能多多关照！（中间暂停时间实在太长了，还希望大家能多多包涵，下期远程争取两个星期内出炉！）</p>
 </div>
         

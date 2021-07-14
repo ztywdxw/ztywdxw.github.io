@@ -279,87 +279,87 @@
   
   <div class="content">
         <div><h3 id="一、基本概念介绍-amp-PostgreSQL特性"><a href="#一、基本概念介绍-amp-PostgreSQL特性" class="headerlink" title="一、基本概念介绍&amp;PostgreSQL特性"></a>一、基本概念介绍&amp;PostgreSQL特性</h3><p>  从这篇开始，我们正式对数据库进行学习。那么在庞大的数据库家族里边，最具有代表性的当然还是SQL家族。那么很多小白会产生疑问，SQL到底是啥呢，那么下面这张图，或许能够或多或少的解答一下你的疑惑。</p>
-<p> <img src="https://www.hualigs.cn/image/602f28e9389bc.jpg" alt="p41"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f28e9389bc.jpg" alt="p41"></p>
 <p>  在数据库的选择上，我也着重考虑了一下各大数据库的优劣后，慎重选择了本系列所使用的的SQL型数据库——PostgreSQL。以下是维基百科还有菜鸟教程对它的简单介绍</p>
-<p> <img src="https://www.hualigs.cn/image/602f2a5a0ee27.jpg" alt="p47"></p>
-<p> <img src="https://www.hualigs.cn/image/602f2a5a2ad09.jpg" alt="p49"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f2a5a0ee27.jpg" alt="p47"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f2a5a2ad09.jpg" alt="p49"></p>
 <p>  确实，如果在国内的话，大家一提到SQL，脑海里边大多数浮现出来的都是微软的SQL SERVER（当然我上数据库课就用的这个）还有互联网是上面大火的MySQL（甲骨文旗下，分开源与商业版本）。但是对于这款PostgreSQL，大家却鲜有提及，可我为什么要拿他来作为本教程的例子来进行教学呢。下面，我就用几张图来向大家证明一下我的想法究竟怎么样：</p>
-<p> <img src="https://www.hualigs.cn/image/602f2c152dc6e.jpg" alt="p42"></p>
-<p> <img src="https://www.hualigs.cn/image/602f2c15485e7.jpg" alt="p43"></p>
-<p> <img src="https://www.hualigs.cn/image/602f2c153a885.jpg" alt="p44"></p>
-<p> <img src="https://www.hualigs.cn/image/602f2c153a868.jpg" alt="p45"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f2c152dc6e.jpg" alt="p42"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f2c15485e7.jpg" alt="p43"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f2c153a885.jpg" alt="p44"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f2c153a868.jpg" alt="p45"></p>
 <p>  由此可见，PostgreSQL不仅是一款开源数据库，更是一款优秀的开源数据库。有着极其强大功能还有广泛的操作系统支持。而且，PostgreSQL里面还有一个很强大的组件——PostGIS</p>
-<p> <img src="https://www.hualigs.cn/image/602f2f739240a.jpg" alt="p47"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f2f739240a.jpg" alt="p47"></p>
 <p>  所以说，在庞大的SQL型数据库家族里边——PostgreSQL确实是一个强大且独特的存在。不仅完全开源（MySQL有商业版），而且还有着强大的数据库功能和插件支持，且支持很多类型的数据（JSON、XML等等）。所以说，我们选择这款数据库来学习也是无可厚非的！<br>  接下来，就让我们利用上一篇学过的DG，来对PostgreSQL进行一些基本的建立以及查询操作吧！</p>
 <h3 id="二、数据库的安装"><a href="#二、数据库的安装" class="headerlink" title="二、数据库的安装"></a>二、数据库的安装</h3><p>  这个过程跟安装DG基本上差不多，就是去官网找到下载链接以后下载安装包以后一步步安装即可。【PostgreSQL无需设置用户名，默认postgres（该用户为超级用户，也就相对于root或者Administrator）。设置的密码就是该用户的密码】</p>
 <p>  官网下载界面（<a target="_blank" rel="noopener" href="https://www.postgresql.org/download/%EF%BC%89">https://www.postgresql.org/download/）</a></p>
-<p><img src="https://www.hualigs.cn/image/602f3312cfc74.jpg"></p>
+<p><img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f3312cfc74.jpg"></p>
 <p>  直接下载界面（）</p>
-<p><img src="https://www.hualigs.cn/image/602f3312a93eb.jpg"></p>
+<p><img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f3312a93eb.jpg"></p>
 <p>  安装好以后的管理界面启动窗口以及登录界面（PS:这个程序叫做pgAdmin4，是PostgreSQL图形化管理界面。可以在里边进行各种操作。由于本系列主要介绍DataGrip来对数据库操作，所以略过此部分，有兴趣的朋友可以自行查阅菜鸟教程或者相关资料来进行学习）</p>
-<p><img src="https://www.hualigs.cn/image/602f3312cea5f.jpg"></p>
-<p><img src="https://www.hualigs.cn/image/602f3312a375a.jpg"></p>
+<p><img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f3312cea5f.jpg"></p>
+<p><img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f3312a375a.jpg"></p>
 <p>  PostgreSQL的插件管理器（Application Stack Bulider）</p>
-<p><img src="https://www.hualigs.cn/image/602f3312086f9.jpg" alt="p5"></p>
-<p><img src="https://www.hualigs.cn/image/602f331207959.jpg" alt="p6"></p>
+<p><img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f3312086f9.jpg" alt="p5"></p>
+<p><img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f331207959.jpg" alt="p6"></p>
 <p>  进入管理界面后的数据库信息界面（右边性能状态，左边数据库结构信息）</p>
-<p> <img src="https://www.hualigs.cn/image/602f3312a6fb1.jpg" alt="p7"></p>
-<p> <img src="https://www.hualigs.cn/image/602f3312cce9f.jpg" alt="p8"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f3312a6fb1.jpg" alt="p7"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f3312cce9f.jpg" alt="p8"></p>
 <h3 id="三、基本操作"><a href="#三、基本操作" class="headerlink" title="三、基本操作"></a>三、基本操作</h3><h4 id="1-连接数据库（上篇已经介绍过了）"><a href="#1-连接数据库（上篇已经介绍过了）" class="headerlink" title="1.连接数据库（上篇已经介绍过了）"></a>1.连接数据库（上篇已经介绍过了）</h4><p>  首先按照下图输入自己设置的用户名以及密码进行连接</p>
-<p> <img src="https://www.hualigs.cn/image/602f3206923c5.jpg" alt="p9"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f3206923c5.jpg" alt="p9"></p>
 <p>  连接成功后如下</p>
-<p> <img src="https://www.hualigs.cn/image/602f320693470.jpg" alt="p10"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f320693470.jpg" alt="p10"></p>
 <h4 id="2、建立-amp-删除（数据库、数据表、模式）"><a href="#2、建立-amp-删除（数据库、数据表、模式）" class="headerlink" title="2、建立&amp;删除（数据库、数据表、模式）"></a>2、建立&amp;删除（数据库、数据表、模式）</h4><h5 id="i、建库-amp-删库（跑路？）-amp-选库"><a href="#i、建库-amp-删库（跑路？）-amp-选库" class="headerlink" title="i、建库&amp;删库（跑路？）&amp;选库"></a>i、建库&amp;删库（跑路？）&amp;选库</h5><p>  数据库建立语句：CREATE DATABASE dbname（数据库的名字）;</p>
-<p> <img src="https://www.hualigs.cn/image/602f46288a359.jpg" alt="p11"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f46288a359.jpg" alt="p11"></p>
 <p>  数据库删除语句：DROP DATABASE  dbname;</p>
-<p> <img src="https://www.hualigs.cn/image/602f46287e236.jpg" alt="p12"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f46287e236.jpg" alt="p12"></p>
 <p>  数据库的选择：①寻找这个下拉箭头 ②在下拉菜单里边对数据库进行选择喽</p>
-<p> <img src="https://www.hualigs.cn/image/602f46286faf6.jpg" alt="p13"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f46286faf6.jpg" alt="p13"></p>
 <p>  Warning（:bangbang:）：SQL语言和C\C++、JAVA语言一样，均以英文分号（;）来作为某条语句的结束符，如果你粗心大意忘记它的话，就会出现一些莫名其妙的错误。（毕竟当年也是这么过来的 (:weary:) ）</p>
 <h5 id="ii、建表-amp-删表"><a href="#ii、建表-amp-删表" class="headerlink" title="ii、建表&amp;删表"></a>ii、建表&amp;删表</h5><p>  建表语句：CREATE TABLE table_name(<br>   column1 datatype,<br>   column2 datatype,<br>   column3 datatype,<br>   …..<br>   columnN datatype,<br>   PRIMARY KEY( 一个或多个列 )<br>);</p>
-<p> <img src="https://www.hualigs.cn/image/602f49f5e4ccb.jpg" alt="p14"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f49f5e4ccb.jpg" alt="p14"></p>
 <p>  结果如下：</p>
-<p> <img src="https://www.hualigs.cn/image/602f49f5c2035.jpg" alt="p15"></p>
-<p> <img src="https://www.hualigs.cn/image/602f49f5b32cc.jpg" alt="p16"></p>
-<p>  删表语句：DROP TABLE table_name（表名）;<br> <img src="https://www.hualigs.cn/image/602f49f5e76a9.jpg" alt="p17"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f49f5c2035.jpg" alt="p15"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f49f5b32cc.jpg" alt="p16"></p>
+<p>  删表语句：DROP TABLE table_name（表名）;<br> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f49f5e76a9.jpg" alt="p17"></p>
 <h5 id="iii、模式创建-amp-删除"><a href="#iii、模式创建-amp-删除" class="headerlink" title="iii、模式创建&amp;删除"></a>iii、模式创建&amp;删除</h5><p>  创建模式语句：create schema myschema;<br>  create table myschema.company(<br>   ID   INT              NOT NULL,<br>   NAME VARCHAR (20)     NOT NULL,<br>   AGE  INT              NOT NULL,<br>   ADDRESS  CHAR (25),<br>   SALARY   DECIMAL (18, 2),<br>   PRIMARY KEY (ID));</p>
-<p> <img src="https://www.hualigs.cn/image/602f4b05309ad.jpg" alt="p18"></p>
-<p>  删除模式语句：DROP SCHEMA myschema CASCADE;(模式&amp;模式内对象) DROP SCHEMA myschema;（删除空模式）（此处模式内有对象存在，所以使用第一个语句）<br> <img src="https://www.hualigs.cn/image/602f4b053c1a5.jpg" alt="p19"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f4b05309ad.jpg" alt="p18"></p>
+<p>  删除模式语句：DROP SCHEMA myschema CASCADE;(模式&amp;模式内对象) DROP SCHEMA myschema;（删除空模式）（此处模式内有对象存在，所以使用第一个语句）<br> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f4b053c1a5.jpg" alt="p19"></p>
 <h4 id="3、向表内插入数据（记录）-（PS-删除会在下一章讲解）"><a href="#3、向表内插入数据（记录）-（PS-删除会在下一章讲解）" class="headerlink" title="3、向表内插入数据（记录） （PS:删除会在下一章讲解）"></a>3、向表内插入数据（记录） （PS:删除会在下一章讲解）</h4><p>  INSERT INTO 语句语法格式如下：<br>  INSERT INTO TABLE_NAME (column1, column2, column3,…columnN)<br>  VALUES (value1, value2, value3,…valueN);<br>  其中：<br>  column1, column2,…columnN 为表中字段名。<br>  value1, value2, value3,…valueN 为字段对应的值。</p>
 <p>实例：</p>
 <p>  创建 COMPANY 表并向其中插入数据：<br>   CREATE TABLE COMPANY(<br>   ID INT PRIMARY KEY     NOT NULL,<br>   NAME           TEXT    NOT NULL,<br>   AGE            INT     NOT NULL,<br>   ADDRESS        CHAR(50),<br>   SALARY         REAL,<br>   JOIN_DATE      DATE<br>);<br>  INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY,JOIN_DATE) VALUES (1, ‘Paul’, 32, ‘California’, 20000.00,’2001-07-13’);<br>  INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,JOIN_DATE) VALUES (2, ‘Allen’, 25, ‘Texas’, ‘2007-12-13’); （本语句忽略 SALARY 字段）<br>  INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY,JOIN_DATE) VALUES (3, ‘Teddy’, 23, ‘Norway’, 20000.00, DEFAULT ); （本语句 JOIN_DATE 字段使用 DEFAULT 子句来设置默认值，而不是指定值）<br>  INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY,JOIN_DATE) VALUES (4, ‘Mark’, 25, ‘Rich-Mond ‘, 65000.00, ‘2007-12-13’ ), (5, ‘David’, 27, ‘Texas’, 85000.00, ‘2007-12-13’);<br>(以上语句采用多行插入)</p>
-<p> <img src="https://www.hualigs.cn/image/602f4e65ce603.jpg" alt="p20"></p>
-<p>  插入后的数据表：<br> <img src="https://www.hualigs.cn/image/602f4e65d5292.jpg" alt="p21"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f4e65ce603.jpg" alt="p20"></p>
+<p>  插入后的数据表：<br> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f4e65d5292.jpg" alt="p21"></p>
 <h4 id="4、查询语句（查看数据表内容以及结合下面的运算符表达式来查询特定内容）"><a href="#4、查询语句（查看数据表内容以及结合下面的运算符表达式来查询特定内容）" class="headerlink" title="4、查询语句（查看数据表内容以及结合下面的运算符表达式来查询特定内容）"></a>4、查询语句（查看数据表内容以及结合下面的运算符表达式来查询特定内容）</h4><p>  语法格式：SELECT column1, column2,…columnN FROM table_name;<br>  column1, column2,…columnN 为表中字段名。<br>  table_name 为表名。<br>  查询整个表内容可用此句：SELECT * FROM table_name;<br>  那么就让我们来赶紧查询一下我们刚刚建立好的数据表吧 （:smile:）</p>
-<p> <img src="https://www.hualigs.cn/image/602f4fe2aa388.jpg" alt="p22"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f4fe2aa388.jpg" alt="p22"></p>
 <p>  当然我们也可以读取指定字段 ID 和 NAME：</p>
-<p> <img src="https://www.hualigs.cn/image/602f4fe2b5e2f.jpg" alt="p23"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f4fe2b5e2f.jpg" alt="p23"></p>
 <p>（PS:其实在实际使用中如果没有特定需求根本没必要这么麻烦,DataGrip里边方便的图形管理方式就够你使用的了，在实际应用当中一般都是用SELECT语句结合下面的运算符表达式还有后面学到的一些语句实现一些特定的查询操作喽）</p>
 <h4 id="5、运算符-amp-表达式（承上启下喽，本篇最后一节内容喽）"><a href="#5、运算符-amp-表达式（承上启下喽，本篇最后一节内容喽）" class="headerlink" title="5、运算符&amp;表达式（承上启下喽，本篇最后一节内容喽）"></a>5、运算符&amp;表达式（承上启下喽，本篇最后一节内容喽）</h4><h5 id="i、运算符（跟常见语言里边的大同小异）"><a href="#i、运算符（跟常见语言里边的大同小异）" class="headerlink" title="i、运算符（跟常见语言里边的大同小异）"></a>i、运算符（跟常见语言里边的大同小异）</h5><p>  PostgreSQL 常见的运算符有：<br>  算术运算符<br>  比较运算符<br>  逻辑运算符<br>  按位运算符<br>  （这里就不在详细介绍了，相关链接会在第四部分出现，只有运行结果）<br>  算术运算符的实例：</p>
-<p> <img src="https://www.hualigs.cn/image/602f51e4c05e7.jpg" alt="p24"></p>
-<p> <img src="https://www.hualigs.cn/image/602f51e47833f.jpg" alt="p25"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f51e4c05e7.jpg" alt="p24"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f51e47833f.jpg" alt="p25"></p>
 <p>  比较运算符在查询中的实例：</p>
-<p> <img src="https://www.hualigs.cn/image/602f57b9f2612.jpg" alt="p31"></p>
-<p> <img src="https://www.hualigs.cn/image/602f57b98fc9e.jpg" alt="p36"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f57b9f2612.jpg" alt="p31"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f57b98fc9e.jpg" alt="p36"></p>
 <p>  逻辑运算符在查询中的实例：（此处有遗漏，抱歉抱歉）</p>
-<p> <img src="https://www.hualigs.cn/image/602f594db1cee.jpg" alt="p40"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f594db1cee.jpg" alt="p40"></p>
 <p>  按位运算符的实例：</p>
-<p> <img src="https://www.hualigs.cn/image/602f58a0dc49f.jpg" alt="p38"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f58a0dc49f.jpg" alt="p38"></p>
 <h5 id="ii、表达式-THE-END-OF-THE-PAGE"><a href="#ii、表达式-THE-END-OF-THE-PAGE" class="headerlink" title="ii、表达式(THE END OF THE PAGE)"></a>ii、表达式(THE END OF THE PAGE)</h5><p>  表达式是由一个或多个的值、运算符、PostgresSQL 函数组成的。<br>  PostgreSQL 表达式类似一个公式，我们可以将其应用在查询语句中，用来查找数据库中指定条件的结果集。</p>
 <p>  PostgreSQL 中的表达式分为：布尔表达式、数字表达式以及日期表达式三类（详细暂不介绍）</p>
 <p>  小技巧：如何把SQL文件中的内容导入PostgreSQL （其他SQL型数据库也与此方法相同）<br>  我们学习的语言叫做SQL语言，那么与之对应的文件即为.sql后缀名结尾的文件（其他语言也是如此，只不过有的是缩写（Python是.py)）。<br>  实例中提供了一个SQL文件，那么我们改如何利用它呢。其实很简单，借助DataGrip只需以下两步即可<br>  ① 打开左上角文件菜单，选择标红处来打开文件</p>
-<p> <img src="https://www.hualigs.cn/image/602f51e48620d.jpg" alt="p26"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f51e48620d.jpg" alt="p26"></p>
 <p>  ② 选择文件路径（用浏览器下载的在你的下载文件夹里边）</p>
-<p> <img src="https://www.hualigs.cn/image/602f54da8fecc.jpg" alt="p50"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f54da8fecc.jpg" alt="p50"></p>
 <p>  ③ 在右边栏选择并打开文件后，复制文件内容，将其粘贴到查询控制台当中（输入SQL语句的地方）</p>
-<p> <img src="https://www.hualigs.cn/image/602f51e4d241c.jpg" alt="p27"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f51e4d241c.jpg" alt="p27"></p>
 <p>  以上三步完成以后，我们利用已有的SQL文件的建表操作就完成了（你也可以把你自己的语句保存到SQL文件里边，方便日后使用）</p>
 <p>  提示：在选择多行语句的时候，一般点击最后一个选项（即全标为绿色）来进行选择</p>
-<p> <img src="https://www.hualigs.cn/image/602f56103d717.jpg" alt="p28"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f56103d717.jpg" alt="p28"></p>
 <p>  以下便是综合利用布尔表达式以及数字表达式来对该表进行查询的实例：</p>
-<p> <img src="https://www.hualigs.cn/image/602f58a1001e0.jpg" alt="p37"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f58a1001e0.jpg" alt="p37"></p>
 <p>  日期表达式：该表达式可以查询当前数据库所在系统的时期与时间【默认为GMT（格林尼治时间）】（tips：如果想与系统时间相同，需要手动设置时区，后面会提到）</p>
-<p> <img src="https://www.hualigs.cn/image/602f594d9d077.jpg" alt="p39"></p>
+<p> <img src= "/img/loading.gif" data-src="https://www.hualigs.cn/image/602f594d9d077.jpg" alt="p39"></p>
 <h3 id="四、小结-amp-预告"><a href="#四、小结-amp-预告" class="headerlink" title="四、小结&amp;预告"></a>四、小结&amp;预告</h3><h4 id="i、小结"><a href="#i、小结" class="headerlink" title="i、小结"></a>i、小结</h4><p>  本篇（数据库部分第二篇）基本上介绍了PostgreSQL的基本使用（食用）方法，让大家领略了SQL语言的用法以及特点。其实本系列不仅是一个教程，更是我本人的一趟探索之旅。我其实大二上学期那个数据库课程学的也并不怎么的，对于SQL语言也基本上是一知半解。但在日后的学习当中愈发显现出来了数据库的重要性。虽然我们专业方向是大数据，但是某些地方还是少不了SQL的支持（例如Apache Hive）。然后又在去年下半年接触到了NoSQL这个概念，感觉很新奇。所以可以说是对数据库又有了不小的兴趣。而且在探索了几天DataGrip以后，发现这确实是个神器一般的IDE。所以我便以PostgreSQL和CouchBase（这个是在DataGrip里边偶然发现的）为代表来写本系列教程数据库部分。【当然MongoDB（助我完成了数据采集存储课程的课程设计）也是一款很好用且易用的NoSQL数据库，日后有时间也会写一下有关它的教程（番外篇喽）。】</p>
 <h4 id="ii、下期预告"><a href="#ii、下期预告" class="headerlink" title="ii、下期预告"></a>ii、下期预告</h4><p>  下期会带领大家把剩下的部分补充完整，并拓展一点PostgreSQL的高级玩法（与Apache HTTP Server插件结合）。并且进一步发掘DataGrip里边更好玩的功能。所以说，下期可能还要再等上那么一段时间（因为我还要考俩证hhh）。</p>
 <h4 id="五、相关问题说明"><a href="#五、相关问题说明" class="headerlink" title="五、相关问题说明"></a>五、相关问题说明</h4><p>  本篇大量借鉴了菜鸟教程当中的PostgreSQL系列教程（<a target="_blank" rel="noopener" href="https://www.runoob.com/postgresql/postgresql-tutorial.html%EF%BC%89">https://www.runoob.com/postgresql/postgresql-tutorial.html）</a> 在此也对菜鸟教程的维护者们表达一声衷心的感谢（没有你们也没有我这篇教程可以说（:joy:））本处没有提及到的内容，大部分都可以在这个网页上找到，有兴趣的可以前去参考一下。<br>  拓展：我把PostgreSQL和CouchBase相关官方文档以及维基百科PDF版本压缩后上传到了我的网盘里，现将链接附于此处方便大家自取：</p>

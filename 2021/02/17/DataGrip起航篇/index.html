@@ -1,0 +1,710 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <meta name="author" content="John Doe">
+  
+  
+      <meta name="subtitle" content="仰望の小窝">
+  
+  
+  
+  
+    <link rel="alternate" href="/atom.xml " title="仰望の小窝" type="application/atom+xml">
+  
+
+  
+
+  <title>DataGrip远征之起航篇 | 仰望の小窝</title>
+
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PF19JX4JG8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PF19JX4JG8');
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6eb3722b95248e8c031a8e9c26c58145";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+
+  <link rel="stylesheet" href="/css/style.css" >
+  <link rel="stylesheet" href="/css/partial/dark.css" >
+
+  
+  
+  
+
+  
+    
+      <link rel="stylesheet" href="/css/partial/highlight/atom-one-light.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/a2396837/CDN@latest/css/iconfont.css">
+    
+      <link rel="stylesheet" href="http://at.alicdn.com/t/font_2381979_qnbzuuco1xf.css">
+    
+  
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+</html>
+    
+<div class="nav index" style="height: 60px;">
+    <div class="title animated fadeInDown">
+        <div class="layui-container">
+                <div class="nav-title"><a href="/" title="仰望の小窝">仰望の小窝</a></div>
+            <div class="nav-list">
+                <button> <span class=""></span><span style="display: block;"></span><span class=""></span> </button>
+                <ul class="layui-nav" lay-filter="">
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/search/ ">
+                            <i class=" fas fa-search-plus " style="color: rgb(3 169 244);"></i>
+                            <span class="layui-nav-item-name">搜索</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/ ">
+                            <i class=" fab fa-fort-awesome " style="color: rgb(255 107 107);"></i>
+                            <span class="layui-nav-item-name">首页</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/archives/ ">
+                            <i class=" fas fa-archive " style="color: rgb(10 189 227);"></i>
+                            <span class="layui-nav-item-name">归档</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/tags/ ">
+                            <i class=" fas fa-hashtag " style="color: rgb(254 202 87);"></i>
+                            <span class="layui-nav-item-name">标签</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/categories ">
+                            <i class=" far fa-folder-open " style="color: rgb(29 209 161);"></i>
+                            <span class="layui-nav-item-name">分类</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/about/ ">
+                            <i class=" fab fa-grav " style="color: rgb(154 106 247);"></i>
+                            <span class="layui-nav-item-name">关于</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/guestbook/ ">
+                            <i class=" fab fa-telegram " style="color: hsl(205deg 100% 50%);"></i>
+                            <span class="layui-nav-item-name">留言</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/link/ ">
+                            <i class=" fab fa-weixin " style="color: hsl(152deg 73% 45%);"></i>
+                            <span class="layui-nav-item-name">友链</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/shuoshuo/ ">
+                            <i class=" fas fa-coffee " style="color:#31c7c1;"></i>
+                            <span class="layui-nav-item-name">说说</span>
+                        </a>
+                    </li>
+                    
+                    
+                    <span class="layui-nav-bar" style="left: 342px; top: 78px; width: 0px; opacity: 0;"></span>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<header class="header">
+        
+            <div class="title">
+                <a href="/">仰望の小窝</a>
+            </div>
+         
+    </div>
+     
+
+            <div class="motto">
+                <span>We grow neither better nor worse as we grow old but more and more like ourselves.</span>
+            </div>
+    
+    
+            <div class="social">
+                
+                        <a class="social-icon" href="https://github.com/ztywdxw" target="_blank" title="Github">
+                            <i class="iconfont icon-GitHub" aria-hidden="true"></i>
+                          </a>
+                 
+                        <a class="social-icon" href="mailto:zhangshuhang2000@163.com" target="_blank" title="Email">
+                            <i class="iconfont icon-email" aria-hidden="true"></i>
+                          </a>
+                 
+                        <a class="social-icon" href="https://img02.sogoucdn.com/app/a/100520146/78ef5dcbd4ba6987f2113de340f1353c" target="_blank" title="WeChatQR">
+                            <i class="iconfont icon-weixin" aria-hidden="true"></i>
+                          </a>
+                 
+                        <a class="social-icon" href="https://space.bilibili.com/7020110" target="_blank" title="Bilibili">
+                            <i class="iconfont icon-bilibili" aria-hidden="true"></i>
+                          </a>
+                 
+                        <a class="social-icon" href="https://music.163.com/#/user/home?id=41735389" target="_blank" title="Netmusic">
+                            <i class="iconfont icon-wangyiyunyinle1" aria-hidden="true"></i>
+                          </a>
+                 
+                        <a class="social-icon" href="/atom.xml" target="_blank" title="rss">
+                            <i class="iconfont icon-rss" aria-hidden="true"></i>
+                          </a>
+                 
+            </div>
+     
+</header>
+
+    
+<article id="post">
+  <div class="post-title">DataGrip远征之起航篇</div>
+  
+<div class="post-meta">
+    
+    
+      <div class="post-meta-item date">
+        <span title="发表于 2021.02.17"><i class="far fa-calendar-alt"></i> 2021.02.17</span>
+      </div>
+      <div class="post-meta-item updated">
+        <span title="更新于 2021.02.21"><i class="far fa-calendar-check"></i> 2021.02.21</span>
+      </div>
+     
+    
+      <div class="post-meta-item categories">
+        
+          <i class="fas fa-inbox article-meta__icon"></i> <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+        
+      </div>
+     
+    
+     <div class="post-meta-item wordcount">
+        
+          <i class="fas fa-pencil-alt"></i> <span class="post-count">1.7k 字</span>
+           
+        
+          <i class="far fa-clock"></i> <span class="post-count">6 分钟</span>
+                               
+      </div>
+     
+</div>
+
+
+  
+  <div class="content">
+        <div><h3 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h3><p>  众所周知，JB（JetBrains）家的IDE这两年可以说是称霸了整个开发界，得到了广大一线程序员的极高认可度。其明星产品IDEA可以说是成为了现今JAVA开发的顶流，而且更是得到了Google官方的认可（不信可以去看一看Android Studio是基于谁开发的）。所以说，其下的IDE一定还有哪款就如同IDEA那般神器似的存在。正好，我有天晚上闲暇之余，便在JB ToolBox里面发现了一款强大的数据库管理IDE，也就是咱们今天的主角——DataGrip!<br>  接下来，我遍会和大家一起，一同领略DG（DataGrip）在数据库应用当中给我们带来的便捷！<br>  而且，在以后我也会一远征为主题，出一个系列来介绍我发现的各种新技术与新玩法，欢迎大家来我的博客进行关注哦。</p>
+<h3 id="二、安装"><a href="#二、安装" class="headerlink" title="二、安装"></a>二、安装</h3><p>  废话少说，我们接下来就来介绍怎么安装：</p>
+<h4 id="1、JB-ToolBox"><a href="#1、JB-ToolBox" class="headerlink" title="1、JB ToolBox"></a>1、JB ToolBox</h4><p>  这个办法就太简单了未必，现在很多公司都开发了这种APP（就像他家的软件管家那样）。直接install以后，你等几分钟就装好了，还能从里边一键启动。（PS:默认安装在C盘（其实是跟ToolBox安装在一起，也就是它的目录下边），介意的朋友请看第二条）</p>
+<p> <img src="https://www.hualigs.cn/image/602cd5fcd3351.jpg" alt="d1"></p>
+<h4 id="2、官网"><a href="#2、官网" class="headerlink" title="2、官网"></a>2、官网</h4><p>  不想默认安装的朋友呢，那就自己去官网老老实实下载安装喽(直接点下载跳转后接着点击就行)（links:<a target="_blank" rel="noopener" href="https://www.jetbrains.com/zh-cn/datagrip/">https://www.jetbrains.com/zh-cn/datagrip/</a>)</p>
+<p> <img src="https://www.hualigs.cn/image/602cd9a307f04.jpg" alt="d4"><br>（这上面有不少介绍，可以去看一看）</p>
+<p> <img src="https://www.hualigs.cn/image/602cd9bbab772.jpg" alt="d5"></p>
+<h3 id="三、配置（最关键的一部喽）"><a href="#三、配置（最关键的一部喽）" class="headerlink" title="三、配置（最关键的一部喽）"></a>三、配置（最关键的一部喽）</h3><h4 id="1、启动-amp-汉化-amp-链接数据库"><a href="#1、启动-amp-汉化-amp-链接数据库" class="headerlink" title="1、启动&amp;汉化&amp;链接数据库"></a>1、启动&amp;汉化&amp;链接数据库</h4><p>  用ToolBox安装的直接在ToolBox里边启动即可，官网下载安装包安装的去找桌面图标或者开始菜单哦（ToolBox安装的开始菜单也能找到）<br>  启动后就进入了主界面</p>
+<p> <img src="https://www.hualigs.cn/image/602cdc1e3403d.jpg" alt="d6"><br>  汉化按照下图操作即可（所有的JB IDE 都用这个办法，不用去网上下载那些乱七八糟的汉化包了，JB官方的插件基本上支持旗下所有IDE了）（菜单在File里边找，就是左上角那个按钮喽）<br>（汉化完按照提示重启即可）<br> <img src="https://www.hualigs.cn/image/602cdd2bb3376.jpg" alt="d7"></p>
+<p> <img src="https://www.hualigs.cn/image/602cdbb732d5d.jpg" alt="d6p"></p>
+<p>  都说JB家的IDE智能，那么它们到底智能在什么地方呢，接下来就能领略到了。</p>
+<p>  DataGrip 支持以下所有的数据库（图中数据库均可支持）</p>
+<p> <img src="https://www.hualigs.cn/image/6031d8c31e651.jpg" alt="d2"></p>
+<p>  按照下图来添加你常用的数据库</p>
+<p> <img src="https://www.hualigs.cn/image/602cde9d71ff2.jpg" alt="d8"></p>
+<p>  设置的话，别忘了先点击下载哦，得有驱动才能正常连接哦（DG靠JDBC来与数据库进行交互，JDBC有很多版本，每个数据库都要有与它相对应的驱动才能正常使用喽）</p>
+<p> <img src="https://www.hualigs.cn/image/602cdf2dbf63a.jpg" alt="d9"></p>
+<p>  点击完下载以后，再填写完信息，就可以测试链接了。（不测试可能会翻车的哦）测试完了接着点应用即可，这样第一步就算设置完事了。</p>
+<p> <img src="https://www.hualigs.cn/image/602ce0223b0fd.jpg" alt="d10"></p>
+<h3 id="二、使用数据库"><a href="#二、使用数据库" class="headerlink" title="二、使用数据库"></a>二、使用数据库</h3><p>  经过上面一通操作以后，我们就可以愉快地使用数据库喽，嘿嘿嘿。（如果一切正常，每个数据库下面会有一个小绿点，链接失败会报错）</p>
+<p> <img src="https://www.hualigs.cn/image/602ce0d546727.jpg" alt="d11"></p>
+<p>  接下来就可以进行各种查询与查表操作了，大家可以愉快的进行探索喽。</p>
+<p> <img src="https://www.hualigs.cn/image/602ce19830b77.jpg" alt="d12"></p>
+<h3 id="三、后记-amp-预告"><a href="#三、后记-amp-预告" class="headerlink" title="三、后记&amp;预告"></a>三、后记&amp;预告</h3><p>  停更这么久，这是我年后开更的第一篇，也是第一篇原创博文。为什么叫远征呢，是因为之前在慕课网上看到了一个学习C++的系列就叫这个名字，感觉挺好的，就这么给借用了一下。当然这只是其中一个原因，还有就是远征象征着我们对计算机技术的开拓与探索精神，还有那种一去不复返的决心与信心。当然学习数据库也是因为之前大二的时候SQL没学好，想着找个机会补补课。上学期在学习ELK技术栈的过程中也接触到了NoSQL这个概念（课程设计用到了大名鼎鼎的MongoDB）。就感觉数据库还挺有意思的，也希望接着这个系列和大家一起共学习，共奋进喽。<br>  预告的话，本系列计划暂时先更新我目前在使用的这些数据库还有DG（因为我也是刚接触没几天所以更新应该会慢一点）。主要还有教资考试二级这俩东西，挺难的。SQL的话准备借着PostgreSQL来学习（MySQL国内已经用烂了感觉，但是用这个的不多，看着还挺不错，比较好奇喽）NoSQL，除了那个MongoDB，还有就是我刚刚发现的一个神器——Couchbase。这货还挺厉害，存储模式上跟知名的Redis倒还挺像，还有很多连接器可以把别的NoSQL里边的东西传进来（其中就包括elastic）。但是，这个东西的中文资料实在是太欠缺啦。所以我只能接着谷歌翻译一点点学喽（它用的N1QL语言跟SQL倒还挺像的，跟PostgreSQL的共同特点都是用一个WEB界面来进行管理）当然MongoDB就太舒服了，中文资料一堆（我就看的菜鸟教程），操作也简单（有点Python内味）大家感兴趣的可以自己学习。<br>  当然第二篇过几天也会问世的，这期内容不多，不过挖的坑不少。有耐心的朋友就等一等我，没耐心的就跟着我的提示自己找资料学呗（英文文档是真滴头疼，我特么四级也就刚刚过线，实在是受不了啊，反正PostgreSQL那个巨长的文档我已经是未看先吐了）{还有就是除了MongoDB，那俩在国内的下载速度应该是不大行的【（PostgreSQL我没事，反正Couchbase是死慢）有条件的最好科学上网一波，去外面下。顺道这用谷歌翻译看看Couchbase官方文档（百度翻译能翻译PDF，还免费，PostgreSQL的文档就交给他了）】}<br>  这篇到这里就结束了，希望大家能多多支持，可以在评论区留言，实在不明白给我发邮件就行，没有邮箱的话，我把IM软件放下边自行取用即可。</p>
+<h3 id="四、友情链接（供大家学习参考用）"><a href="#四、友情链接（供大家学习参考用）" class="headerlink" title="四、友情链接（供大家学习参考用）"></a>四、友情链接（供大家学习参考用）</h3><p>links1：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/145182406?from_voters_page=true">https://zhuanlan.zhihu.com/p/145182406?from_voters_page=true</a><br>links2：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_53184798/article/details/110940571">https://blog.csdn.net/weixin_53184798/article/details/110940571</a><br>links3：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/d8a14c3bc0c6">https://www.jianshu.com/p/d8a14c3bc0c6</a><br>links4：<a target="_blank" rel="noopener" href="https://www.runoob.com/postgresql/postgresql-tutorial.html">https://www.runoob.com/postgresql/postgresql-tutorial.html</a><br>liksn5：<a target="_blank" rel="noopener" href="https://www.runoob.com/mongodb/mongodb-tutorial.html">https://www.runoob.com/mongodb/mongodb-tutorial.html</a><br>links6:  <a target="_blank" rel="noopener" href="https://docs.couchbase.com/home/index.html(CB%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%EF%BC%8C%E8%B0%B7%E6%AD%8C%E7%BF%BB%E8%AF%91%E6%95%88%E6%9E%9C%E4%B8%8D%E9%94%99)">https://docs.couchbase.com/home/index.html(CB官方文档，谷歌翻译效果不错)</a><br>IM软件联系方式：<br>      QQ:2401491894<br>      WX:ztyw2000sx</p>
+</div>
+        
+          <div class="post-copyright">
+                  <div class="copyright-item">
+                      <span> 作者: John Doe</span>
+                  </div>
+                  <div class="copyright-item">
+                      <span> 链接: <a href="http://example.com/2021/02/17/DataGrip%E8%B5%B7%E8%88%AA%E7%AF%87/">http://example.com/2021/02/17/DataGrip%E8%B5%B7%E8%88%AA%E7%AF%87/</a></span>
+                  </div>
+                  <div class="copyright-item">
+                      <span> 声明: 本博客所有文章除特别声明外，均采用许可协议 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> 转载请注明出处！</span>
+                  </div>
+          </div>
+        
+  </div>
+
+  <div class="share-reward">
+    <div class="share">
+        
+<div class="social-share" data-sites="facebook,twitter,wechat,weibo,qq"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css">
+<script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script>
+
+
+      </div>
+        <div class="reward">
+          
+  <div style="padding: 10px 0; margin-left: 20px; width: 90%; text-align: center;">
+    <div class="reward-content">
+        <ul id="donateBox" class="list pos-a">
+          
+           <li id="PayPal"><a href="https://paypal.me" target="_blank" title="贝宝">贝宝</a></li>
+            
+          
+            <li id="AliPay" title="支付宝"><img data-img="/img/alipay.jpg" onerror=this.onerror=null,this.src="/img/loading.gif"></img></li>
+               
+                 
+            <li id="WeChat" title="微信"><img date-img="/img/wechat.jpg" onerror=this.onerror=null,this.src="/img/loading.gif"></img></li>
+                      
+          </ul>
+        <div id="QRBox" class="pos-f left-100">
+          <div id="MainBox"></div>
+        </div>
+    </div>
+  </div>
+  
+        </div>
+    </div>
+    
+    <div class="post_tags">
+      
+        <i class="fas fa-tag"></i> <a href="/tags/JetBrains-DataGrip/" class="tag">JetBrains DataGrip</a>
+      
+    </div>
+    <div class="post-nav">
+      
+        <div class="post-nav-prev post-nav-item">
+            <a href="/2021/02/19/DataGrip%E7%A6%BB%E6%B8%AF%E7%AF%87/" >DataGrip远征之离港篇（PostgreSQL基础篇一）<i class="fa fa-chevron-left"></i></a>
+        </div>
+      
+      
+        <div class="post-nav-next post-nav-item">
+            <a href="/2021/01/29/%E8%81%8C%E4%B8%9A%E7%90%86%E5%BF%B5%E5%AD%A6%E7%94%9F%E8%A7%82-%E7%A7%91%E7%9B%AE%E4%B8%80/" >职业理念学生观<i class="fa fa-chevron-right"></i></a>
+        </div>
+      
+    </div>
+      
+
+
+
+  <div id="valine"></div>
+  <script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+  <script>
+        new Valine({
+          el: '#valine',
+          appId: "",
+          appKey: "",
+          avatar: "mm",
+          lang: "",
+          meta: 'nick,mail,link'.split(','),
+          requiredFields: 'nick,mail'.split(','),
+          placeholder: "评论记得带上邮箱,你的留言我会马上收到邮箱提醒哒",
+          pageSize:'10',
+          recordIP: 'true',
+          serverURLs: "",
+          emojiCDN: "",
+          enableQQ: "true",
+        });
+  </script>
+  
+
+</article>
+
+    
+<a id="gotop" href="javascript:" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    
+
+
+
+
+
+
+    
+<div id="bottom-outer">
+    <div id="bottom-inner">
+        © 2020 <i class="fa fa-heart" id="heart"></i> John Doe 
+        <br>
+        Powered by 
+        <a target="_blank" rel="noopener" href="http://hexo.io">hexo</a> | Theme is <a target="_blank" rel="noopener" href="https://github.com/a2396837/hexo-theme-blank/">hexo-theme-blank</a>
+        
+          <div class="icp-info">
+            
+          <a href="" target="_blank"> </a>
+        </div>
+        
+    </div>  
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/layui-src@2.5.5/dist/layui.min.js"></script>
+
+
+
+  
+    <script src="/js/script.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+  
+
+ 
+
+
+
+  <script>
+    window.lazyLoadOptions = {
+      elements_selector: 'img',
+      threshold: 0
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script>   
+  
+
+
+  <script>
+    var images = $('img').not('.nav-logo img').not('.card img').not($('a>img')).not('.reward-content img')
+    images.each(function (i, o) {
+      var lazyloadSrc = $(o).attr('data-src') ? $(o).attr('data-src') : $(o).attr('src')
+      $(o).wrap(`<a href="${lazyloadSrc}" data-fancybox="group" data-caption="${$(o).attr('alt')}" class="fancybox"></a>`)
+    })
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script>
+  <script>
+        $().fancybox({
+      selector: '[data-fancybox]',
+      loop: true,
+      transitionEffect: 'slide',
+      protect: true,
+      buttons: ['slideShow', 'fullScreen', 'thumbs', 'close']
+    })
+  </script>   
+  
+
+
+  <script>
+  if (!window.MathJax) {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]],
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+              const display = !!node.type.match(/; *mode=display/)
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+              const text = document.createTextNode('')
+              node.parentNode.replaceChild(text, node)
+              math.start = {node: text, delim: '', n: 0}
+              math.end = {node: text, delim: '', n: 0}
+              doc.math.push(math)
+            }
+          }, '']
+        }
+      }
+    }
+    
+    var script = document.createElement('script')
+    script.src = "https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"
+    script.id = 'MathJax-script'
+    script.async = true
+    document.head.appendChild(script)
+  } else {
+    MathJax.startup.document.state(0)
+    MathJax.texReset()
+    MathJax.typeset()
+  }
+  </script>
+  
+
+
+
+
+  <script>
+    jQuery(document).ready(function () {
+      var QRBox = $('#QRBox');
+      var MainBox = $('#MainBox');
+      var AliPayQR = '/img/alipay.jpg';
+      var WeChanQR = '/img/wechat.jpg';
+
+      function showQR(QR) {
+        if (QR) {
+          MainBox.css('background-image', 'url(' + QR + ')');
+        }
+        $('#donateBox').addClass('blur');
+        QRBox.fadeIn(300, function (argument) {
+          MainBox.addClass('showQR');
+        });
+      }
+
+      $('#donateBox>li').click(function (event) {
+        var thisID = $(this).attr('id');
+        if (thisID === 'AliPay') {
+          showQR(AliPayQR);
+        } else if (thisID === 'WeChat') {
+          showQR(WeChanQR);
+        }
+      });
+
+      MainBox.click(function (event) {
+        MainBox.removeClass('showQR').addClass('hideQR');
+        setTimeout(function (a) {
+          QRBox.fadeOut(300, function (argument) {
+            MainBox.removeClass('hideQR');
+          });
+          $('#DonateText,#donateBox,#github').removeClass('blur');
+        }, 600);
+
+      });
+    });
+  </script>
+  
+
+
+  
+<div id="QPlayer">
+	<div id="pContent">
+		<div id="player">
+			<span class="cover"></span>
+			<div class="ctrl">
+				<div class="musicTag marquee">
+					<strong>Title</strong>
+					 <span> - </span>
+					<span class="artist">Artist</span>
+				</div>
+				<div class="progress">
+					<div class="timer left">0:00</div>
+					<div class="contr">
+						<div class="rewind icon"></div>
+						<div class="playback icon"></div>
+						<div class="fastforward icon"></div>
+					</div>
+					<div class="right">
+						<div class="liebiao icon"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="ssBtn">
+				<div class="adf"><i class="fas fa-music" style="color: #Fff;"></i></div>
+		</div>
+	</div>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/a2396837/CDN@latest/css/audio.css">
+	<ol id="playlist"></ol>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery.marquee@1.5.0/jquery.marquee.min.js"></script>
+<script>
+	var playlist = [];
+	
+		  playlist.push({title:'Fancy Footwork',artist:'Chromeo',mp3:'http://music.163.com/song/media/outer/url?id=17067330.mp3',cover:'http://p2.music.126.net/DoIzY-5D9w6a1DOjqQOfaQ==/2543170395098631.jpg?param=130y130'})
+	  
+		  playlist.push({title:'Lover (Remix)',artist:'Taylor Swift',mp3:'http://music.163.com/song/media/outer/url?id=1403250178.mp3',cover:'http://p1.music.126.net/Kn3_QaCQyCXYzrpYZOV70w==/109951164485490984.jpg?param=130y130'})
+	  
+		  playlist.push({title:'新宝島',artist:'サカナクション（鱼韵乐队）',mp3:'http://music.163.com/song/media/outer/url?id=548556492.mp3',cover:'http://p2.music.126.net/GDc5hluJ8I-qPdGNd7oyew==/109951163212870144.jpg?param=130y130'})
+	  
+		  playlist.push({title:'Yesterday Once More',artist:'Carpenters',mp3:'http://music.163.com/song/media/outer/url?id=3986241.mp3',cover:'http://p2.music.126.net/oohnKqUgkNEsYJHJDcGmZw==/19000660439857160.jpg?param=130y130'})
+	  
+		  playlist.push({title:'Bressanone （布列瑟农）',artist:'Matthew Lien',mp3:'http://music.163.com/song/media/outer/url?id=26402216.mp3',cover:'http://p2.music.126.net/zC_UIPZXIvBvdZoEQ18p8A==/2459607511388322.jpg?param=130y130'})
+	  
+		  playlist.push({title:'贝加尔湖畔',artist:'李健',mp3:'http://music.163.com/song/media/outer/url?id=31877245.mp3',cover:'http://p1.music.126.net/vSdrZFQn3uMetLL_j3AnQg==/109951163432562414.jpg?param=130y130'})
+	  
+		  playlist.push({title:'高山低谷',artist:'林奕匡',mp3:'https://music.163.com/song/media/outer/url?id=28457932.mp3',cover:'https://p1.music.126.net/-Ghh732Mw5P7SroEr954qA==/6011030069358994.jpg'})
+	  
+		  playlist.push({title:'青春之火（火力少年王主题曲）',artist:'潘松和',mp3:'http://music.163.com/song/media/outer/url?id=27907768.mp3',cover:'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2704271897,2343045000&amp;fm=26&amp;gp=0.jpg'})
+	  
+		  playlist.push({title:'極楽浄土',artist:'GARNiDELiA',mp3:'http://music.163.com/song/media/outer/url?id=1401518640.mp3',cover:'http://p1.music.126.net/F3TtZMcfa0XUY7lksww3wA==/109951164472407553.jpg?param=130y130'})
+	  
+		  playlist.push({title:'勾指起誓',artist:'洛天依',mp3:'http://music.163.com/song/media/outer/url?id=1345872140.mp3',cover:'http://p1.music.126.net/eMyCr0gv0kPGlew9XTNjyA==/109951163944178164.jpg?param=130y130'})
+	  
+		  playlist.push({title:'打上花火',artist:'米津玄師',mp3:'http://music.163.com/song/media/outer/url?id=496869422.mp3',cover:'http://p1.music.126.net/ZUCE_1Tl_hkbtamKmSNXEg==/109951163009282836.jpg?param=130y130'})
+	  
+		  playlist.push({title:'STAYIN ALIVE',artist:'JUJU',mp3:'http://music.163.com/song/media/outer/url?id=1422256925.mp3',cover:'https://y.gtimg.cn/music/photo_new/T002R300x300M000004RxCjL1fY0ZM_1.jpg?max_age=2592000'})
+	  
+		  playlist.push({title:'旅は君連れ世は情け',artist:'妄想キャリブレーション',mp3:'http://isure.stream.qqmusic.qq.com/C400003Pl7iY2Wn5PO.m4a?guid=372516760&amp;vkey=2A9545FF066C6CF7445AB2CB16B44A9E8598562DB5CDB9D2B03EC1C5A3E643F477DF11426708DC041A65D07457D7071F5288C0EFBF7B77A9&amp;uin=0&amp;fromtag=66',cover:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1618019269,1676332809&amp;fm=15&amp;gp=0.jpg'})
+	  
+		  playlist.push({title:'广寒宫',artist:'丸子呦,李袁杰',mp3:'http://183.232.254.152/amobile.music.tc.qq.com/C400004XQi860Wf6rL.m4a?guid=683959989&amp;vkey=254AAA7039E01E4BF5D51972B50F0E005B365A54CF10DF17491080487C97592A38DD9CE08BE4E41B3608F515E2DDD571AA2F23AC668AE067&amp;uin=0&amp;fromtag=66',cover:'https://y.gtimg.cn/music/photo_new/T002R300x300M000002CFKB72pSv3q_1.jpg?max_age=2592000'})
+	  
+		  playlist.push({title:'日常',artist:'田馥甄',mp3:'http://music.163.com/song/media/outer/url?id=417953660.mp3',cover:'http://p1.music.126.net/t2jMKd26CWaGme28CgBUQw==/109951163520342028.jpg?param=130y130'})
+	  
+		  playlist.push({title:'太阳照常升起',artist:'久石譲',mp3:'http://music.163.com/song/media/outer/url?id=441722.mp3',cover:'http://p1.music.126.net/drqGdK7zgW7B7IFl4lWpoQ==/109951163369835547.jpg?param=130y130'})
+	  
+		  playlist.push({title:'愛にできることはまだあるかい（天气之子）',artist:'盖盖Nyan（原唱:RADWIMPS）',mp3:'http://music.163.com/song/media/outer/url?id=1478626970.mp3',cover:'https://y.gtimg.cn/music/photo_new/T002R300x300M000000G0jJh3Roa93_2.jpg?max_age=2592000'})
+	  
+		  playlist.push({title:'The Phoenix',artist:'Fall Out Boy',mp3:'http://music.163.com/song/media/outer/url?id=407002572.mp3',cover:'http://p2.music.126.net/N07DLBEqprGMTZH21VC0vw==/19129303300296000.jpg?param=130y130'})
+	  
+		  playlist.push({title:'buttercup',artist:'Jack Stauber',mp3:'http://music.163.com/song/media/outer/url?id=1353428173.mp3',cover:'http://p2.music.126.net/SxHWjtL711PQu9BYqECl3g==/109951163943010347.jpg?param=130y130'})
+	  
+		  playlist.push({title:'The Next Episode',artist:'Dr. Dre,Snoop Dogg,Kurupt,Nate Dogg',mp3:'http://music.163.com/song/media/outer/url?id=27403811.mp3',cover:'https://y.gtimg.cn/music/photo_new/T002R300x300M0000005RlXI3mbhqB_1.jpg?max_age=2592000'})
+	  
+		  playlist.push({title:'Sugar',artist:'Maroon 5',mp3:'http://music.163.com/song/media/outer/url?id=29019227.mp3',cover:'http://p1.music.126.net/RkbAVgGxk1Nr5fjuaR9dww==/19175482788569403.jpg?param=130y130'})
+	  
+		  playlist.push({title:'The Divine Chord',artist:'The Avalanches,MGMT,Johnny Marr',mp3:'http://music.163.com/song/media/outer/url?id=1803547538.mp3',cover:'http://p1.music.126.net/C-QKX52c0XBV4ZKVCXzflg==/109951165533136947.jpg?param=130y130'})
+	  
+		  playlist.push({title:'Counting Stars',artist:'OneRepublic',mp3:'http://music.163.com/song/media/outer/url?id=1815870237.mp3',cover:'http://p1.music.126.net/b2nl6jsVbqj23IV8dVvJcg==/7766950139663735.jpg?param=130y130'})
+	  
+		  playlist.push({title:'全力☆Summer! (TV Size)（笨女孩主题曲）',artist:'angela',mp3:'http://music.163.com/song/media/outer/url?id=492144647.mp3',cover:'http://p2.music.126.net/izoowek-eBK4Tn7JnMQkVg==/19023750184019570.jpg?param=130y130'})
+	  
+		  playlist.push({title:'Goyang Ubur Ubur Remixed(印尼宽带BGM)',artist:'Hendro Engkeng',mp3:'http://music.163.com/song/media/outer/url?id=1815378685.mp3',cover:'http://p1.music.126.net/m1cB2oyAnVQ-yieUdr584w==/109951165669103420.jpg?param=130y130'})
+	  
+		  playlist.push({title:'想见你想见你想见你（电视剧想见你主题曲）',artist:'八三夭',mp3:'http://music.163.com/song/media/outer/url?id=1403215687.mp3',cover:'http://p2.music.126.net/8MjQbJQtJRV81d1dNfiH6A==/109951164485238047.jpg?param=130y130'})
+	  
+		  playlist.push({title:'Downfalls',artist:'Cally Rhodes',mp3:'http://music.163.com/song/media/outer/url?id=1438808727.mp3',cover:'http://p1.music.126.net/xkmL7bvThvrHNsDWQZ-Hkw==/109951164883213632.jpg?param=130y130'})
+	  
+		  playlist.push({title:'Following the Sun',artist:'SUPER-Hi,Neeka',mp3:'http://isure.stream.qqmusic.qq.com/C400003aXxlZ3W5EVz.m4a?guid=814385539&amp;vkey=A015D8B3C813EE054CDC40668A1F716BC9B65C8A2D39120A84F180AE4C5E8F3F009196D1329547B0A275B4CDF855BDC1F2FD73306CDF3564&amp;uin=0&amp;fromtag=66',cover:'https://y.gtimg.cn/music/photo_new/T002R300x300M0000016lvmK3geXGP_1.jpg?max_age=2592000'})
+	  
+		  playlist.push({title:'Rolling In The Deep',artist:'Adele',mp3:'http://music.163.com/song/media/outer/url?id=16435051.mp3',cover:'http://p1.music.126.net/OKanKHPDKfG-Yq6AOOuYDw==/16629013858937311.jpg?param=130y130'})
+	  
+		  playlist.push({title:'没有理想的人不伤心 (Remix版)',artist:'新裤子',mp3:'http://music.163.com/song/media/outer/url?id=1305364671.mp3',cover:'http://p2.music.126.net/GW7sRVT4sfm8P0kwkMlQlg==/109951163522768092.jpg?param=130y130'})
+	  
+		  playlist.push({title:'Someone Like You',artist:'Adele',mp3:'http://music.163.com/song/media/outer/url?id=16435049.mp3',cover:'http://p1.music.126.net/l-lffSJW45DaETAp7Vi22Q==/109951165341361103.jpg?param=130y130'})
+	  
+		  playlist.push({title:'热爱105°C的你',artist:'阿肆',mp3:'http://music.163.com/song/media/outer/url?id=1840459406.mp3',cover:'https://p1.music.126.net/6Herq6VjqEM2wJYiML3y4A==/109951166098679116.jpg?param=130y130'})
+	  
+		  playlist.push({title:'失恋阵线联盟',artist:'草蜢',mp3:'http://music.163.com/song/media/outer/url?id=349892.mp3',cover:'https://p1.music.126.net/uGfwFQBCM3y-mEyRgYu9ww==/109951164785517764.jpg?param=130y130'})
+	  
+	var isRotate = true;
+	var autoplay = false;
+  </script>
+<script src="https://cdn.jsdelivr.net/gh/a2396837/CDN@latest/js/player.js"></script>
+<script>
+  function bgChange(){
+	var lis= $('.lib');
+	for(var i=0; i<lis.length; i+=2)
+	lis[i].style.background = 'rgba(246, 246, 246, 0.5)';
+  }
+  window.onload = bgChange;
+</script>
+
+  
+
+
+  <script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script>
+  
+
+
+  <script src="https://cdn.jsdelivr.net/gh/a2396837/CDN@latest/js/firework.js"></script>
+  
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js"></script>
+<script>
+!function (e, t, a) {
+  var initCopyCode = function(){
+    var copyHtml = '';
+    copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+    copyHtml += '  <i class="fa fa-clipboard"></i><span>复制</span>';
+    copyHtml += '</button>';
+    $(".highlight .code pre").before(copyHtml);
+    new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+  }
+  initCopyCode();
+}(window, document);
+</script>  
+  
+
+<script>
+  var btntop = $('#gotop');
+  btntop.on('click', function (e) {
+    e.preventDefault();
+    $('html, body').animate({ scrollTop: 0 }, '300');
+  });
+
+  var $table = $('.content table').not($('figure.highlight > table'))
+$table.each(function () {
+  $(this).wrap('<div class="table-wrap"></div>')
+})
+</script>
+
+
+
+</html>

@@ -1,0 +1,777 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <meta name="author" content="John Doe">
+  
+  
+      <meta name="subtitle" content="仰望の小窝">
+  
+  
+  
+  
+    <link rel="alternate" href="/atom.xml " title="仰望の小窝" type="application/atom+xml">
+  
+
+  
+
+  <title>DataGrip远征之离港篇（PostgreSQL基础篇一） | 仰望の小窝</title>
+
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PF19JX4JG8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PF19JX4JG8');
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6eb3722b95248e8c031a8e9c26c58145";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+
+  <link rel="stylesheet" href="/css/style.css" >
+  <link rel="stylesheet" href="/css/partial/dark.css" >
+
+  
+  
+  
+
+  
+    
+      <link rel="stylesheet" href="/css/partial/highlight/atom-one-light.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/a2396837/CDN@latest/css/iconfont.css">
+    
+      <link rel="stylesheet" href="http://at.alicdn.com/t/font_2381979_qnbzuuco1xf.css">
+    
+  
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+</html>
+    
+<div class="nav index" style="height: 60px;">
+    <div class="title animated fadeInDown">
+        <div class="layui-container">
+                <div class="nav-title"><a href="/" title="仰望の小窝">仰望の小窝</a></div>
+            <div class="nav-list">
+                <button> <span class=""></span><span style="display: block;"></span><span class=""></span> </button>
+                <ul class="layui-nav" lay-filter="">
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/search/ ">
+                            <i class=" fas fa-search-plus " style="color: rgb(3 169 244);"></i>
+                            <span class="layui-nav-item-name">搜索</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/ ">
+                            <i class=" fab fa-fort-awesome " style="color: rgb(255 107 107);"></i>
+                            <span class="layui-nav-item-name">首页</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/archives/ ">
+                            <i class=" fas fa-archive " style="color: rgb(10 189 227);"></i>
+                            <span class="layui-nav-item-name">归档</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/tags/ ">
+                            <i class=" fas fa-hashtag " style="color: rgb(254 202 87);"></i>
+                            <span class="layui-nav-item-name">标签</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/categories ">
+                            <i class=" far fa-folder-open " style="color: rgb(29 209 161);"></i>
+                            <span class="layui-nav-item-name">分类</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/about/ ">
+                            <i class=" fab fa-grav " style="color: rgb(154 106 247);"></i>
+                            <span class="layui-nav-item-name">关于</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/guestbook/ ">
+                            <i class=" fab fa-telegram " style="color: hsl(205deg 100% 50%);"></i>
+                            <span class="layui-nav-item-name">留言</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/link/ ">
+                            <i class=" fab fa-weixin " style="color: hsl(152deg 73% 45%);"></i>
+                            <span class="layui-nav-item-name">友链</span>
+                        </a>
+                    </li>
+                    
+                        
+                        
+                        
+                        
+                    <li class="layui-nav-item">
+                        <a href="/shuoshuo/ ">
+                            <i class=" fas fa-coffee " style="color:#31c7c1;"></i>
+                            <span class="layui-nav-item-name">说说</span>
+                        </a>
+                    </li>
+                    
+                    
+                    <span class="layui-nav-bar" style="left: 342px; top: 78px; width: 0px; opacity: 0;"></span>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<header class="header">
+        
+            <div class="title">
+                <a href="/">仰望の小窝</a>
+            </div>
+         
+    </div>
+     
+
+            <div class="motto">
+                <span>We grow neither better nor worse as we grow old but more and more like ourselves.</span>
+            </div>
+    
+    
+            <div class="social">
+                
+                        <a class="social-icon" href="https://github.com/ztywdxw" target="_blank" title="Github">
+                            <i class="iconfont icon-GitHub" aria-hidden="true"></i>
+                          </a>
+                 
+                        <a class="social-icon" href="mailto:zhangshuhang2000@163.com" target="_blank" title="Email">
+                            <i class="iconfont icon-email" aria-hidden="true"></i>
+                          </a>
+                 
+                        <a class="social-icon" href="https://img02.sogoucdn.com/app/a/100520146/78ef5dcbd4ba6987f2113de340f1353c" target="_blank" title="WeChatQR">
+                            <i class="iconfont icon-weixin" aria-hidden="true"></i>
+                          </a>
+                 
+                        <a class="social-icon" href="https://space.bilibili.com/7020110" target="_blank" title="Bilibili">
+                            <i class="iconfont icon-bilibili" aria-hidden="true"></i>
+                          </a>
+                 
+                        <a class="social-icon" href="https://music.163.com/#/user/home?id=41735389" target="_blank" title="Netmusic">
+                            <i class="iconfont icon-wangyiyunyinle1" aria-hidden="true"></i>
+                          </a>
+                 
+                        <a class="social-icon" href="/atom.xml" target="_blank" title="rss">
+                            <i class="iconfont icon-rss" aria-hidden="true"></i>
+                          </a>
+                 
+            </div>
+     
+</header>
+
+    
+<article id="post">
+  <div class="post-title">DataGrip远征之离港篇（PostgreSQL基础篇一）</div>
+  
+<div class="post-meta">
+    
+      <div class="post-meta-item top">
+        <i class="far fa-bookmark"></i>
+        <span class="sticky">置顶</span>
+      </div>
+    
+    
+      <div class="post-meta-item date">
+        <span title="发表于 2021.02.19"><i class="far fa-calendar-alt"></i> 2021.02.19</span>
+      </div>
+      <div class="post-meta-item updated">
+        <span title="更新于 2021.02.19"><i class="far fa-calendar-check"></i> 2021.02.19</span>
+      </div>
+     
+    
+      <div class="post-meta-item categories">
+        
+          <i class="fas fa-inbox article-meta__icon"></i> <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+        
+      </div>
+     
+    
+     <div class="post-meta-item wordcount">
+        
+          <i class="fas fa-pencil-alt"></i> <span class="post-count">2.8k 字</span>
+           
+        
+          <i class="far fa-clock"></i> <span class="post-count">10 分钟</span>
+                               
+      </div>
+     
+</div>
+
+
+  
+  <div class="content">
+        <div><h3 id="一、基本概念介绍-amp-PostgreSQL特性"><a href="#一、基本概念介绍-amp-PostgreSQL特性" class="headerlink" title="一、基本概念介绍&amp;PostgreSQL特性"></a>一、基本概念介绍&amp;PostgreSQL特性</h3><p>  从这篇开始，我们正式对数据库进行学习。那么在庞大的数据库家族里边，最具有代表性的当然还是SQL家族。那么很多小白会产生疑问，SQL到底是啥呢，那么下面这张图，或许能够或多或少的解答一下你的疑惑。</p>
+<p> <img src="https://www.hualigs.cn/image/602f28e9389bc.jpg" alt="p41"></p>
+<p>  在数据库的选择上，我也着重考虑了一下各大数据库的优劣后，慎重选择了本系列所使用的的SQL型数据库——PostgreSQL。以下是维基百科还有菜鸟教程对它的简单介绍</p>
+<p> <img src="https://www.hualigs.cn/image/602f2a5a0ee27.jpg" alt="p47"></p>
+<p> <img src="https://www.hualigs.cn/image/602f2a5a2ad09.jpg" alt="p49"></p>
+<p>  确实，如果在国内的话，大家一提到SQL，脑海里边大多数浮现出来的都是微软的SQL SERVER（当然我上数据库课就用的这个）还有互联网是上面大火的MySQL（甲骨文旗下，分开源与商业版本）。但是对于这款PostgreSQL，大家却鲜有提及，可我为什么要拿他来作为本教程的例子来进行教学呢。下面，我就用几张图来向大家证明一下我的想法究竟怎么样：</p>
+<p> <img src="https://www.hualigs.cn/image/602f2c152dc6e.jpg" alt="p42"></p>
+<p> <img src="https://www.hualigs.cn/image/602f2c15485e7.jpg" alt="p43"></p>
+<p> <img src="https://www.hualigs.cn/image/602f2c153a885.jpg" alt="p44"></p>
+<p> <img src="https://www.hualigs.cn/image/602f2c153a868.jpg" alt="p45"></p>
+<p>  由此可见，PostgreSQL不仅是一款开源数据库，更是一款优秀的开源数据库。有着极其强大功能还有广泛的操作系统支持。而且，PostgreSQL里面还有一个很强大的组件——PostGIS</p>
+<p> <img src="https://www.hualigs.cn/image/602f2f739240a.jpg" alt="p47"></p>
+<p>  所以说，在庞大的SQL型数据库家族里边——PostgreSQL确实是一个强大且独特的存在。不仅完全开源（MySQL有商业版），而且还有着强大的数据库功能和插件支持，且支持很多类型的数据（JSON、XML等等）。所以说，我们选择这款数据库来学习也是无可厚非的！<br>  接下来，就让我们利用上一篇学过的DG，来对PostgreSQL进行一些基本的建立以及查询操作吧！</p>
+<h3 id="二、数据库的安装"><a href="#二、数据库的安装" class="headerlink" title="二、数据库的安装"></a>二、数据库的安装</h3><p>  这个过程跟安装DG基本上差不多，就是去官网找到下载链接以后下载安装包以后一步步安装即可。【PostgreSQL无需设置用户名，默认postgres（该用户为超级用户，也就相对于root或者Administrator）。设置的密码就是该用户的密码】</p>
+<p>  官网下载界面（<a target="_blank" rel="noopener" href="https://www.postgresql.org/download/%EF%BC%89">https://www.postgresql.org/download/）</a></p>
+<p><img src="https://www.hualigs.cn/image/602f3312cfc74.jpg"></p>
+<p>  直接下载界面（）</p>
+<p><img src="https://www.hualigs.cn/image/602f3312a93eb.jpg"></p>
+<p>  安装好以后的管理界面启动窗口以及登录界面（PS:这个程序叫做pgAdmin4，是PostgreSQL图形化管理界面。可以在里边进行各种操作。由于本系列主要介绍DataGrip来对数据库操作，所以略过此部分，有兴趣的朋友可以自行查阅菜鸟教程或者相关资料来进行学习）</p>
+<p><img src="https://www.hualigs.cn/image/602f3312cea5f.jpg"></p>
+<p><img src="https://www.hualigs.cn/image/602f3312a375a.jpg"></p>
+<p>  PostgreSQL的插件管理器（Application Stack Bulider）</p>
+<p><img src="https://www.hualigs.cn/image/602f3312086f9.jpg" alt="p5"></p>
+<p><img src="https://www.hualigs.cn/image/602f331207959.jpg" alt="p6"></p>
+<p>  进入管理界面后的数据库信息界面（右边性能状态，左边数据库结构信息）</p>
+<p> <img src="https://www.hualigs.cn/image/602f3312a6fb1.jpg" alt="p7"></p>
+<p> <img src="https://www.hualigs.cn/image/602f3312cce9f.jpg" alt="p8"></p>
+<h3 id="三、基本操作"><a href="#三、基本操作" class="headerlink" title="三、基本操作"></a>三、基本操作</h3><h4 id="1-连接数据库（上篇已经介绍过了）"><a href="#1-连接数据库（上篇已经介绍过了）" class="headerlink" title="1.连接数据库（上篇已经介绍过了）"></a>1.连接数据库（上篇已经介绍过了）</h4><p>  首先按照下图输入自己设置的用户名以及密码进行连接</p>
+<p> <img src="https://www.hualigs.cn/image/602f3206923c5.jpg" alt="p9"></p>
+<p>  连接成功后如下</p>
+<p> <img src="https://www.hualigs.cn/image/602f320693470.jpg" alt="p10"></p>
+<h4 id="2、建立-amp-删除（数据库、数据表、模式）"><a href="#2、建立-amp-删除（数据库、数据表、模式）" class="headerlink" title="2、建立&amp;删除（数据库、数据表、模式）"></a>2、建立&amp;删除（数据库、数据表、模式）</h4><h5 id="i、建库-amp-删库（跑路？）-amp-选库"><a href="#i、建库-amp-删库（跑路？）-amp-选库" class="headerlink" title="i、建库&amp;删库（跑路？）&amp;选库"></a>i、建库&amp;删库（跑路？）&amp;选库</h5><p>  数据库建立语句：CREATE DATABASE dbname（数据库的名字）;</p>
+<p> <img src="https://www.hualigs.cn/image/602f46288a359.jpg" alt="p11"></p>
+<p>  数据库删除语句：DROP DATABASE  dbname;</p>
+<p> <img src="https://www.hualigs.cn/image/602f46287e236.jpg" alt="p12"></p>
+<p>  数据库的选择：①寻找这个下拉箭头 ②在下拉菜单里边对数据库进行选择喽</p>
+<p> <img src="https://www.hualigs.cn/image/602f46286faf6.jpg" alt="p13"></p>
+<p>  Warning（:bangbang:）：SQL语言和C\C++、JAVA语言一样，均以英文分号（;）来作为某条语句的结束符，如果你粗心大意忘记它的话，就会出现一些莫名其妙的错误。（毕竟当年也是这么过来的 (:weary:) ）</p>
+<h5 id="ii、建表-amp-删表"><a href="#ii、建表-amp-删表" class="headerlink" title="ii、建表&amp;删表"></a>ii、建表&amp;删表</h5><p>  建表语句：CREATE TABLE table_name(<br>   column1 datatype,<br>   column2 datatype,<br>   column3 datatype,<br>   …..<br>   columnN datatype,<br>   PRIMARY KEY( 一个或多个列 )<br>);</p>
+<p> <img src="https://www.hualigs.cn/image/602f49f5e4ccb.jpg" alt="p14"></p>
+<p>  结果如下：</p>
+<p> <img src="https://www.hualigs.cn/image/602f49f5c2035.jpg" alt="p15"></p>
+<p> <img src="https://www.hualigs.cn/image/602f49f5b32cc.jpg" alt="p16"></p>
+<p>  删表语句：DROP TABLE table_name（表名）;<br> <img src="https://www.hualigs.cn/image/602f49f5e76a9.jpg" alt="p17"></p>
+<h5 id="iii、模式创建-amp-删除"><a href="#iii、模式创建-amp-删除" class="headerlink" title="iii、模式创建&amp;删除"></a>iii、模式创建&amp;删除</h5><p>  创建模式语句：create schema myschema;<br>  create table myschema.company(<br>   ID   INT              NOT NULL,<br>   NAME VARCHAR (20)     NOT NULL,<br>   AGE  INT              NOT NULL,<br>   ADDRESS  CHAR (25),<br>   SALARY   DECIMAL (18, 2),<br>   PRIMARY KEY (ID));</p>
+<p> <img src="https://www.hualigs.cn/image/602f4b05309ad.jpg" alt="p18"></p>
+<p>  删除模式语句：DROP SCHEMA myschema CASCADE;(模式&amp;模式内对象) DROP SCHEMA myschema;（删除空模式）（此处模式内有对象存在，所以使用第一个语句）<br> <img src="https://www.hualigs.cn/image/602f4b053c1a5.jpg" alt="p19"></p>
+<h4 id="3、向表内插入数据（记录）-（PS-删除会在下一章讲解）"><a href="#3、向表内插入数据（记录）-（PS-删除会在下一章讲解）" class="headerlink" title="3、向表内插入数据（记录） （PS:删除会在下一章讲解）"></a>3、向表内插入数据（记录） （PS:删除会在下一章讲解）</h4><p>  INSERT INTO 语句语法格式如下：<br>  INSERT INTO TABLE_NAME (column1, column2, column3,…columnN)<br>  VALUES (value1, value2, value3,…valueN);<br>  其中：<br>  column1, column2,…columnN 为表中字段名。<br>  value1, value2, value3,…valueN 为字段对应的值。</p>
+<p>实例：</p>
+<p>  创建 COMPANY 表并向其中插入数据：<br>   CREATE TABLE COMPANY(<br>   ID INT PRIMARY KEY     NOT NULL,<br>   NAME           TEXT    NOT NULL,<br>   AGE            INT     NOT NULL,<br>   ADDRESS        CHAR(50),<br>   SALARY         REAL,<br>   JOIN_DATE      DATE<br>);<br>  INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY,JOIN_DATE) VALUES (1, ‘Paul’, 32, ‘California’, 20000.00,’2001-07-13’);<br>  INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,JOIN_DATE) VALUES (2, ‘Allen’, 25, ‘Texas’, ‘2007-12-13’); （本语句忽略 SALARY 字段）<br>  INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY,JOIN_DATE) VALUES (3, ‘Teddy’, 23, ‘Norway’, 20000.00, DEFAULT ); （本语句 JOIN_DATE 字段使用 DEFAULT 子句来设置默认值，而不是指定值）<br>  INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY,JOIN_DATE) VALUES (4, ‘Mark’, 25, ‘Rich-Mond ‘, 65000.00, ‘2007-12-13’ ), (5, ‘David’, 27, ‘Texas’, 85000.00, ‘2007-12-13’);<br>(以上语句采用多行插入)</p>
+<p> <img src="https://www.hualigs.cn/image/602f4e65ce603.jpg" alt="p20"></p>
+<p>  插入后的数据表：<br> <img src="https://www.hualigs.cn/image/602f4e65d5292.jpg" alt="p21"></p>
+<h4 id="4、查询语句（查看数据表内容以及结合下面的运算符表达式来查询特定内容）"><a href="#4、查询语句（查看数据表内容以及结合下面的运算符表达式来查询特定内容）" class="headerlink" title="4、查询语句（查看数据表内容以及结合下面的运算符表达式来查询特定内容）"></a>4、查询语句（查看数据表内容以及结合下面的运算符表达式来查询特定内容）</h4><p>  语法格式：SELECT column1, column2,…columnN FROM table_name;<br>  column1, column2,…columnN 为表中字段名。<br>  table_name 为表名。<br>  查询整个表内容可用此句：SELECT * FROM table_name;<br>  那么就让我们来赶紧查询一下我们刚刚建立好的数据表吧 （:smile:）</p>
+<p> <img src="https://www.hualigs.cn/image/602f4fe2aa388.jpg" alt="p22"></p>
+<p>  当然我们也可以读取指定字段 ID 和 NAME：</p>
+<p> <img src="https://www.hualigs.cn/image/602f4fe2b5e2f.jpg" alt="p23"></p>
+<p>（PS:其实在实际使用中如果没有特定需求根本没必要这么麻烦,DataGrip里边方便的图形管理方式就够你使用的了，在实际应用当中一般都是用SELECT语句结合下面的运算符表达式还有后面学到的一些语句实现一些特定的查询操作喽）</p>
+<h4 id="5、运算符-amp-表达式（承上启下喽，本篇最后一节内容喽）"><a href="#5、运算符-amp-表达式（承上启下喽，本篇最后一节内容喽）" class="headerlink" title="5、运算符&amp;表达式（承上启下喽，本篇最后一节内容喽）"></a>5、运算符&amp;表达式（承上启下喽，本篇最后一节内容喽）</h4><h5 id="i、运算符（跟常见语言里边的大同小异）"><a href="#i、运算符（跟常见语言里边的大同小异）" class="headerlink" title="i、运算符（跟常见语言里边的大同小异）"></a>i、运算符（跟常见语言里边的大同小异）</h5><p>  PostgreSQL 常见的运算符有：<br>  算术运算符<br>  比较运算符<br>  逻辑运算符<br>  按位运算符<br>  （这里就不在详细介绍了，相关链接会在第四部分出现，只有运行结果）<br>  算术运算符的实例：</p>
+<p> <img src="https://www.hualigs.cn/image/602f51e4c05e7.jpg" alt="p24"></p>
+<p> <img src="https://www.hualigs.cn/image/602f51e47833f.jpg" alt="p25"></p>
+<p>  比较运算符在查询中的实例：</p>
+<p> <img src="https://www.hualigs.cn/image/602f57b9f2612.jpg" alt="p31"></p>
+<p> <img src="https://www.hualigs.cn/image/602f57b98fc9e.jpg" alt="p36"></p>
+<p>  逻辑运算符在查询中的实例：（此处有遗漏，抱歉抱歉）</p>
+<p> <img src="https://www.hualigs.cn/image/602f594db1cee.jpg" alt="p40"></p>
+<p>  按位运算符的实例：</p>
+<p> <img src="https://www.hualigs.cn/image/602f58a0dc49f.jpg" alt="p38"></p>
+<h5 id="ii、表达式-THE-END-OF-THE-PAGE"><a href="#ii、表达式-THE-END-OF-THE-PAGE" class="headerlink" title="ii、表达式(THE END OF THE PAGE)"></a>ii、表达式(THE END OF THE PAGE)</h5><p>  表达式是由一个或多个的值、运算符、PostgresSQL 函数组成的。<br>  PostgreSQL 表达式类似一个公式，我们可以将其应用在查询语句中，用来查找数据库中指定条件的结果集。</p>
+<p>  PostgreSQL 中的表达式分为：布尔表达式、数字表达式以及日期表达式三类（详细暂不介绍）</p>
+<p>  小技巧：如何把SQL文件中的内容导入PostgreSQL （其他SQL型数据库也与此方法相同）<br>  我们学习的语言叫做SQL语言，那么与之对应的文件即为.sql后缀名结尾的文件（其他语言也是如此，只不过有的是缩写（Python是.py)）。<br>  实例中提供了一个SQL文件，那么我们改如何利用它呢。其实很简单，借助DataGrip只需以下两步即可<br>  ① 打开左上角文件菜单，选择标红处来打开文件</p>
+<p> <img src="https://www.hualigs.cn/image/602f51e48620d.jpg" alt="p26"></p>
+<p>  ② 选择文件路径（用浏览器下载的在你的下载文件夹里边）</p>
+<p> <img src="https://www.hualigs.cn/image/602f54da8fecc.jpg" alt="p50"></p>
+<p>  ③ 在右边栏选择并打开文件后，复制文件内容，将其粘贴到查询控制台当中（输入SQL语句的地方）</p>
+<p> <img src="https://www.hualigs.cn/image/602f51e4d241c.jpg" alt="p27"></p>
+<p>  以上三步完成以后，我们利用已有的SQL文件的建表操作就完成了（你也可以把你自己的语句保存到SQL文件里边，方便日后使用）</p>
+<p>  提示：在选择多行语句的时候，一般点击最后一个选项（即全标为绿色）来进行选择</p>
+<p> <img src="https://www.hualigs.cn/image/602f56103d717.jpg" alt="p28"></p>
+<p>  以下便是综合利用布尔表达式以及数字表达式来对该表进行查询的实例：</p>
+<p> <img src="https://www.hualigs.cn/image/602f58a1001e0.jpg" alt="p37"></p>
+<p>  日期表达式：该表达式可以查询当前数据库所在系统的时期与时间【默认为GMT（格林尼治时间）】（tips：如果想与系统时间相同，需要手动设置时区，后面会提到）</p>
+<p> <img src="https://www.hualigs.cn/image/602f594d9d077.jpg" alt="p39"></p>
+<h3 id="四、小结-amp-预告"><a href="#四、小结-amp-预告" class="headerlink" title="四、小结&amp;预告"></a>四、小结&amp;预告</h3><h4 id="i、小结"><a href="#i、小结" class="headerlink" title="i、小结"></a>i、小结</h4><p>  本篇（数据库部分第二篇）基本上介绍了PostgreSQL的基本使用（食用）方法，让大家领略了SQL语言的用法以及特点。其实本系列不仅是一个教程，更是我本人的一趟探索之旅。我其实大二上学期那个数据库课程学的也并不怎么的，对于SQL语言也基本上是一知半解。但在日后的学习当中愈发显现出来了数据库的重要性。虽然我们专业方向是大数据，但是某些地方还是少不了SQL的支持（例如Apache Hive）。然后又在去年下半年接触到了NoSQL这个概念，感觉很新奇。所以可以说是对数据库又有了不小的兴趣。而且在探索了几天DataGrip以后，发现这确实是个神器一般的IDE。所以我便以PostgreSQL和CouchBase（这个是在DataGrip里边偶然发现的）为代表来写本系列教程数据库部分。【当然MongoDB（助我完成了数据采集存储课程的课程设计）也是一款很好用且易用的NoSQL数据库，日后有时间也会写一下有关它的教程（番外篇喽）。】</p>
+<h4 id="ii、下期预告"><a href="#ii、下期预告" class="headerlink" title="ii、下期预告"></a>ii、下期预告</h4><p>  下期会带领大家把剩下的部分补充完整，并拓展一点PostgreSQL的高级玩法（与Apache HTTP Server插件结合）。并且进一步发掘DataGrip里边更好玩的功能。所以说，下期可能还要再等上那么一段时间（因为我还要考俩证hhh）。</p>
+<h4 id="五、相关问题说明"><a href="#五、相关问题说明" class="headerlink" title="五、相关问题说明"></a>五、相关问题说明</h4><p>  本篇大量借鉴了菜鸟教程当中的PostgreSQL系列教程（<a target="_blank" rel="noopener" href="https://www.runoob.com/postgresql/postgresql-tutorial.html%EF%BC%89">https://www.runoob.com/postgresql/postgresql-tutorial.html）</a> 在此也对菜鸟教程的维护者们表达一声衷心的感谢（没有你们也没有我这篇教程可以说（:joy:））本处没有提及到的内容，大部分都可以在这个网页上找到，有兴趣的可以前去参考一下。<br>  拓展：我把PostgreSQL和CouchBase相关官方文档以及维基百科PDF版本压缩后上传到了我的网盘里，现将链接附于此处方便大家自取：</p>
+<p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1xssmYUsQyF6Q9pdO33pteA">https://pan.baidu.com/s/1xssmYUsQyF6Q9pdO33pteA</a><br>提取码：f9y9 </p>
+<p>  感谢各位的大力支持，你们的热情也是我坚持创作下去的不懈动力，如果觉得本文比较好的话，可以在文章下方将鼠标轻轻移到支付宝&amp;微信出，给我一点小小的奖励。也可以在下面找到相关社交软件的入口，来将本文分享出去哦。（等以后有时间会在b站上传录播课哦，嘿嘿嘿）</p>
+</div>
+        
+          <div class="post-copyright">
+                  <div class="copyright-item">
+                      <span> 作者: John Doe</span>
+                  </div>
+                  <div class="copyright-item">
+                      <span> 链接: <a href="http://example.com/2021/02/19/DataGrip%E7%A6%BB%E6%B8%AF%E7%AF%87/">http://example.com/2021/02/19/DataGrip%E7%A6%BB%E6%B8%AF%E7%AF%87/</a></span>
+                  </div>
+                  <div class="copyright-item">
+                      <span> 声明: 本博客所有文章除特别声明外，均采用许可协议 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> 转载请注明出处！</span>
+                  </div>
+          </div>
+        
+  </div>
+
+  <div class="share-reward">
+    <div class="share">
+        
+<div class="social-share" data-sites="facebook,twitter,wechat,weibo,qq"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css">
+<script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script>
+
+
+      </div>
+        <div class="reward">
+          
+  <div style="padding: 10px 0; margin-left: 20px; width: 90%; text-align: center;">
+    <div class="reward-content">
+        <ul id="donateBox" class="list pos-a">
+          
+           <li id="PayPal"><a href="https://paypal.me" target="_blank" title="贝宝">贝宝</a></li>
+            
+          
+            <li id="AliPay" title="支付宝"><img data-img="/img/alipay.jpg" onerror=this.onerror=null,this.src="/img/loading.gif"></img></li>
+               
+                 
+            <li id="WeChat" title="微信"><img date-img="/img/wechat.jpg" onerror=this.onerror=null,this.src="/img/loading.gif"></img></li>
+                      
+          </ul>
+        <div id="QRBox" class="pos-f left-100">
+          <div id="MainBox"></div>
+        </div>
+    </div>
+  </div>
+  
+        </div>
+    </div>
+    
+    <div class="post_tags">
+      
+        <i class="fas fa-tag"></i> <a href="/tags/PostgreSQL-DataGrip/" class="tag">PostgreSQL DataGrip</a>
+      
+    </div>
+    <div class="post-nav">
+      
+        <div class="post-nav-prev post-nav-item">
+            <a href="/2021/02/20/%E8%80%83%E7%82%B9%E7%B2%BE%E8%AE%B2%204-%E8%AF%BE%E7%A8%8B%E6%A6%82%E8%AE%BA/" >考点精讲 4-课程概论<i class="fa fa-chevron-left"></i></a>
+        </div>
+      
+      
+        <div class="post-nav-next post-nav-item">
+            <a href="/2021/02/17/DataGrip%E8%B5%B7%E8%88%AA%E7%AF%87/" >DataGrip远征之起航篇<i class="fa fa-chevron-right"></i></a>
+        </div>
+      
+    </div>
+      
+
+
+
+  <div id="valine"></div>
+  <script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+  <script>
+        new Valine({
+          el: '#valine',
+          appId: "",
+          appKey: "",
+          avatar: "mm",
+          lang: "",
+          meta: 'nick,mail,link'.split(','),
+          requiredFields: 'nick,mail'.split(','),
+          placeholder: "评论记得带上邮箱,你的留言我会马上收到邮箱提醒哒",
+          pageSize:'10',
+          recordIP: 'true',
+          serverURLs: "",
+          emojiCDN: "",
+          enableQQ: "true",
+        });
+  </script>
+  
+
+</article>
+
+    
+<a id="gotop" href="javascript:" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    
+
+
+
+
+
+
+    
+<div id="bottom-outer">
+    <div id="bottom-inner">
+        © 2020 <i class="fa fa-heart" id="heart"></i> John Doe 
+        <br>
+        Powered by 
+        <a target="_blank" rel="noopener" href="http://hexo.io">hexo</a> | Theme is <a target="_blank" rel="noopener" href="https://github.com/a2396837/hexo-theme-blank/">hexo-theme-blank</a>
+        
+          <div class="icp-info">
+            
+          <a href="" target="_blank"> </a>
+        </div>
+        
+    </div>  
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/layui-src@2.5.5/dist/layui.min.js"></script>
+
+
+
+  
+    <script src="/js/script.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+  
+
+ 
+
+
+
+  <script>
+    window.lazyLoadOptions = {
+      elements_selector: 'img',
+      threshold: 0
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script>   
+  
+
+
+  <script>
+    var images = $('img').not('.nav-logo img').not('.card img').not($('a>img')).not('.reward-content img')
+    images.each(function (i, o) {
+      var lazyloadSrc = $(o).attr('data-src') ? $(o).attr('data-src') : $(o).attr('src')
+      $(o).wrap(`<a href="${lazyloadSrc}" data-fancybox="group" data-caption="${$(o).attr('alt')}" class="fancybox"></a>`)
+    })
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script>
+  <script>
+        $().fancybox({
+      selector: '[data-fancybox]',
+      loop: true,
+      transitionEffect: 'slide',
+      protect: true,
+      buttons: ['slideShow', 'fullScreen', 'thumbs', 'close']
+    })
+  </script>   
+  
+
+
+  <script>
+  if (!window.MathJax) {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]],
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+              const display = !!node.type.match(/; *mode=display/)
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+              const text = document.createTextNode('')
+              node.parentNode.replaceChild(text, node)
+              math.start = {node: text, delim: '', n: 0}
+              math.end = {node: text, delim: '', n: 0}
+              doc.math.push(math)
+            }
+          }, '']
+        }
+      }
+    }
+    
+    var script = document.createElement('script')
+    script.src = "https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"
+    script.id = 'MathJax-script'
+    script.async = true
+    document.head.appendChild(script)
+  } else {
+    MathJax.startup.document.state(0)
+    MathJax.texReset()
+    MathJax.typeset()
+  }
+  </script>
+  
+
+
+
+
+  <script>
+    jQuery(document).ready(function () {
+      var QRBox = $('#QRBox');
+      var MainBox = $('#MainBox');
+      var AliPayQR = '/img/alipay.jpg';
+      var WeChanQR = '/img/wechat.jpg';
+
+      function showQR(QR) {
+        if (QR) {
+          MainBox.css('background-image', 'url(' + QR + ')');
+        }
+        $('#donateBox').addClass('blur');
+        QRBox.fadeIn(300, function (argument) {
+          MainBox.addClass('showQR');
+        });
+      }
+
+      $('#donateBox>li').click(function (event) {
+        var thisID = $(this).attr('id');
+        if (thisID === 'AliPay') {
+          showQR(AliPayQR);
+        } else if (thisID === 'WeChat') {
+          showQR(WeChanQR);
+        }
+      });
+
+      MainBox.click(function (event) {
+        MainBox.removeClass('showQR').addClass('hideQR');
+        setTimeout(function (a) {
+          QRBox.fadeOut(300, function (argument) {
+            MainBox.removeClass('hideQR');
+          });
+          $('#DonateText,#donateBox,#github').removeClass('blur');
+        }, 600);
+
+      });
+    });
+  </script>
+  
+
+
+  
+<div id="QPlayer">
+	<div id="pContent">
+		<div id="player">
+			<span class="cover"></span>
+			<div class="ctrl">
+				<div class="musicTag marquee">
+					<strong>Title</strong>
+					 <span> - </span>
+					<span class="artist">Artist</span>
+				</div>
+				<div class="progress">
+					<div class="timer left">0:00</div>
+					<div class="contr">
+						<div class="rewind icon"></div>
+						<div class="playback icon"></div>
+						<div class="fastforward icon"></div>
+					</div>
+					<div class="right">
+						<div class="liebiao icon"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="ssBtn">
+				<div class="adf"><i class="fas fa-music" style="color: #Fff;"></i></div>
+		</div>
+	</div>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/a2396837/CDN@latest/css/audio.css">
+	<ol id="playlist"></ol>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery.marquee@1.5.0/jquery.marquee.min.js"></script>
+<script>
+	var playlist = [];
+	
+		  playlist.push({title:'Fancy Footwork',artist:'Chromeo',mp3:'http://music.163.com/song/media/outer/url?id=17067330.mp3',cover:'http://p2.music.126.net/DoIzY-5D9w6a1DOjqQOfaQ==/2543170395098631.jpg?param=130y130'})
+	  
+		  playlist.push({title:'Lover (Remix)',artist:'Taylor Swift',mp3:'http://music.163.com/song/media/outer/url?id=1403250178.mp3',cover:'http://p1.music.126.net/Kn3_QaCQyCXYzrpYZOV70w==/109951164485490984.jpg?param=130y130'})
+	  
+		  playlist.push({title:'新宝島',artist:'サカナクション（鱼韵乐队）',mp3:'http://music.163.com/song/media/outer/url?id=548556492.mp3',cover:'http://p2.music.126.net/GDc5hluJ8I-qPdGNd7oyew==/109951163212870144.jpg?param=130y130'})
+	  
+		  playlist.push({title:'Yesterday Once More',artist:'Carpenters',mp3:'http://music.163.com/song/media/outer/url?id=3986241.mp3',cover:'http://p2.music.126.net/oohnKqUgkNEsYJHJDcGmZw==/19000660439857160.jpg?param=130y130'})
+	  
+		  playlist.push({title:'Bressanone （布列瑟农）',artist:'Matthew Lien',mp3:'http://music.163.com/song/media/outer/url?id=26402216.mp3',cover:'http://p2.music.126.net/zC_UIPZXIvBvdZoEQ18p8A==/2459607511388322.jpg?param=130y130'})
+	  
+		  playlist.push({title:'贝加尔湖畔',artist:'李健',mp3:'http://music.163.com/song/media/outer/url?id=31877245.mp3',cover:'http://p1.music.126.net/vSdrZFQn3uMetLL_j3AnQg==/109951163432562414.jpg?param=130y130'})
+	  
+		  playlist.push({title:'高山低谷',artist:'林奕匡',mp3:'https://music.163.com/song/media/outer/url?id=28457932.mp3',cover:'https://p1.music.126.net/-Ghh732Mw5P7SroEr954qA==/6011030069358994.jpg'})
+	  
+		  playlist.push({title:'青春之火（火力少年王主题曲）',artist:'潘松和',mp3:'http://music.163.com/song/media/outer/url?id=27907768.mp3',cover:'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2704271897,2343045000&amp;fm=26&amp;gp=0.jpg'})
+	  
+		  playlist.push({title:'極楽浄土',artist:'GARNiDELiA',mp3:'http://music.163.com/song/media/outer/url?id=1401518640.mp3',cover:'http://p1.music.126.net/F3TtZMcfa0XUY7lksww3wA==/109951164472407553.jpg?param=130y130'})
+	  
+		  playlist.push({title:'勾指起誓',artist:'洛天依',mp3:'http://music.163.com/song/media/outer/url?id=1345872140.mp3',cover:'http://p1.music.126.net/eMyCr0gv0kPGlew9XTNjyA==/109951163944178164.jpg?param=130y130'})
+	  
+		  playlist.push({title:'打上花火',artist:'米津玄師',mp3:'http://music.163.com/song/media/outer/url?id=496869422.mp3',cover:'http://p1.music.126.net/ZUCE_1Tl_hkbtamKmSNXEg==/109951163009282836.jpg?param=130y130'})
+	  
+		  playlist.push({title:'STAYIN ALIVE',artist:'JUJU',mp3:'http://music.163.com/song/media/outer/url?id=1422256925.mp3',cover:'https://y.gtimg.cn/music/photo_new/T002R300x300M000004RxCjL1fY0ZM_1.jpg?max_age=2592000'})
+	  
+		  playlist.push({title:'旅は君連れ世は情け',artist:'妄想キャリブレーション',mp3:'http://isure.stream.qqmusic.qq.com/C400003Pl7iY2Wn5PO.m4a?guid=372516760&amp;vkey=2A9545FF066C6CF7445AB2CB16B44A9E8598562DB5CDB9D2B03EC1C5A3E643F477DF11426708DC041A65D07457D7071F5288C0EFBF7B77A9&amp;uin=0&amp;fromtag=66',cover:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1618019269,1676332809&amp;fm=15&amp;gp=0.jpg'})
+	  
+		  playlist.push({title:'广寒宫',artist:'丸子呦,李袁杰',mp3:'http://183.232.254.152/amobile.music.tc.qq.com/C400004XQi860Wf6rL.m4a?guid=683959989&amp;vkey=254AAA7039E01E4BF5D51972B50F0E005B365A54CF10DF17491080487C97592A38DD9CE08BE4E41B3608F515E2DDD571AA2F23AC668AE067&amp;uin=0&amp;fromtag=66',cover:'https://y.gtimg.cn/music/photo_new/T002R300x300M000002CFKB72pSv3q_1.jpg?max_age=2592000'})
+	  
+		  playlist.push({title:'日常',artist:'田馥甄',mp3:'http://music.163.com/song/media/outer/url?id=417953660.mp3',cover:'http://p1.music.126.net/t2jMKd26CWaGme28CgBUQw==/109951163520342028.jpg?param=130y130'})
+	  
+		  playlist.push({title:'太阳照常升起',artist:'久石譲',mp3:'http://music.163.com/song/media/outer/url?id=441722.mp3',cover:'http://p1.music.126.net/drqGdK7zgW7B7IFl4lWpoQ==/109951163369835547.jpg?param=130y130'})
+	  
+		  playlist.push({title:'愛にできることはまだあるかい（天气之子）',artist:'盖盖Nyan（原唱:RADWIMPS）',mp3:'http://music.163.com/song/media/outer/url?id=1478626970.mp3',cover:'https://y.gtimg.cn/music/photo_new/T002R300x300M000000G0jJh3Roa93_2.jpg?max_age=2592000'})
+	  
+		  playlist.push({title:'The Phoenix',artist:'Fall Out Boy',mp3:'http://music.163.com/song/media/outer/url?id=407002572.mp3',cover:'http://p2.music.126.net/N07DLBEqprGMTZH21VC0vw==/19129303300296000.jpg?param=130y130'})
+	  
+		  playlist.push({title:'buttercup',artist:'Jack Stauber',mp3:'http://music.163.com/song/media/outer/url?id=1353428173.mp3',cover:'http://p2.music.126.net/SxHWjtL711PQu9BYqECl3g==/109951163943010347.jpg?param=130y130'})
+	  
+		  playlist.push({title:'The Next Episode',artist:'Dr. Dre,Snoop Dogg,Kurupt,Nate Dogg',mp3:'http://music.163.com/song/media/outer/url?id=27403811.mp3',cover:'https://y.gtimg.cn/music/photo_new/T002R300x300M0000005RlXI3mbhqB_1.jpg?max_age=2592000'})
+	  
+		  playlist.push({title:'Sugar',artist:'Maroon 5',mp3:'http://music.163.com/song/media/outer/url?id=29019227.mp3',cover:'http://p1.music.126.net/RkbAVgGxk1Nr5fjuaR9dww==/19175482788569403.jpg?param=130y130'})
+	  
+		  playlist.push({title:'The Divine Chord',artist:'The Avalanches,MGMT,Johnny Marr',mp3:'http://music.163.com/song/media/outer/url?id=1803547538.mp3',cover:'http://p1.music.126.net/C-QKX52c0XBV4ZKVCXzflg==/109951165533136947.jpg?param=130y130'})
+	  
+		  playlist.push({title:'Counting Stars',artist:'OneRepublic',mp3:'http://music.163.com/song/media/outer/url?id=1815870237.mp3',cover:'http://p1.music.126.net/b2nl6jsVbqj23IV8dVvJcg==/7766950139663735.jpg?param=130y130'})
+	  
+		  playlist.push({title:'全力☆Summer! (TV Size)（笨女孩主题曲）',artist:'angela',mp3:'http://music.163.com/song/media/outer/url?id=492144647.mp3',cover:'http://p2.music.126.net/izoowek-eBK4Tn7JnMQkVg==/19023750184019570.jpg?param=130y130'})
+	  
+		  playlist.push({title:'Goyang Ubur Ubur Remixed(印尼宽带BGM)',artist:'Hendro Engkeng',mp3:'http://music.163.com/song/media/outer/url?id=1815378685.mp3',cover:'http://p1.music.126.net/m1cB2oyAnVQ-yieUdr584w==/109951165669103420.jpg?param=130y130'})
+	  
+		  playlist.push({title:'想见你想见你想见你（电视剧想见你主题曲）',artist:'八三夭',mp3:'http://music.163.com/song/media/outer/url?id=1403215687.mp3',cover:'http://p2.music.126.net/8MjQbJQtJRV81d1dNfiH6A==/109951164485238047.jpg?param=130y130'})
+	  
+		  playlist.push({title:'Downfalls',artist:'Cally Rhodes',mp3:'http://music.163.com/song/media/outer/url?id=1438808727.mp3',cover:'http://p1.music.126.net/xkmL7bvThvrHNsDWQZ-Hkw==/109951164883213632.jpg?param=130y130'})
+	  
+		  playlist.push({title:'Following the Sun',artist:'SUPER-Hi,Neeka',mp3:'http://isure.stream.qqmusic.qq.com/C400003aXxlZ3W5EVz.m4a?guid=814385539&amp;vkey=A015D8B3C813EE054CDC40668A1F716BC9B65C8A2D39120A84F180AE4C5E8F3F009196D1329547B0A275B4CDF855BDC1F2FD73306CDF3564&amp;uin=0&amp;fromtag=66',cover:'https://y.gtimg.cn/music/photo_new/T002R300x300M0000016lvmK3geXGP_1.jpg?max_age=2592000'})
+	  
+		  playlist.push({title:'Rolling In The Deep',artist:'Adele',mp3:'http://music.163.com/song/media/outer/url?id=16435051.mp3',cover:'http://p1.music.126.net/OKanKHPDKfG-Yq6AOOuYDw==/16629013858937311.jpg?param=130y130'})
+	  
+		  playlist.push({title:'没有理想的人不伤心 (Remix版)',artist:'新裤子',mp3:'http://music.163.com/song/media/outer/url?id=1305364671.mp3',cover:'http://p2.music.126.net/GW7sRVT4sfm8P0kwkMlQlg==/109951163522768092.jpg?param=130y130'})
+	  
+		  playlist.push({title:'Someone Like You',artist:'Adele',mp3:'http://music.163.com/song/media/outer/url?id=16435049.mp3',cover:'http://p1.music.126.net/l-lffSJW45DaETAp7Vi22Q==/109951165341361103.jpg?param=130y130'})
+	  
+		  playlist.push({title:'热爱105°C的你',artist:'阿肆',mp3:'http://music.163.com/song/media/outer/url?id=1840459406.mp3',cover:'https://p1.music.126.net/6Herq6VjqEM2wJYiML3y4A==/109951166098679116.jpg?param=130y130'})
+	  
+		  playlist.push({title:'失恋阵线联盟',artist:'草蜢',mp3:'http://music.163.com/song/media/outer/url?id=349892.mp3',cover:'https://p1.music.126.net/uGfwFQBCM3y-mEyRgYu9ww==/109951164785517764.jpg?param=130y130'})
+	  
+	var isRotate = true;
+	var autoplay = false;
+  </script>
+<script src="https://cdn.jsdelivr.net/gh/a2396837/CDN@latest/js/player.js"></script>
+<script>
+  function bgChange(){
+	var lis= $('.lib');
+	for(var i=0; i<lis.length; i+=2)
+	lis[i].style.background = 'rgba(246, 246, 246, 0.5)';
+  }
+  window.onload = bgChange;
+</script>
+
+  
+
+
+  <script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script>
+  
+
+
+  <script src="https://cdn.jsdelivr.net/gh/a2396837/CDN@latest/js/firework.js"></script>
+  
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js"></script>
+<script>
+!function (e, t, a) {
+  var initCopyCode = function(){
+    var copyHtml = '';
+    copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+    copyHtml += '  <i class="fa fa-clipboard"></i><span>复制</span>';
+    copyHtml += '</button>';
+    $(".highlight .code pre").before(copyHtml);
+    new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+  }
+  initCopyCode();
+}(window, document);
+</script>  
+  
+
+<script>
+  var btntop = $('#gotop');
+  btntop.on('click', function (e) {
+    e.preventDefault();
+    $('html, body').animate({ scrollTop: 0 }, '300');
+  });
+
+  var $table = $('.content table').not($('figure.highlight > table'))
+$table.each(function () {
+  $(this).wrap('<div class="table-wrap"></div>')
+})
+</script>
+
+
+
+</html>
